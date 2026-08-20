@@ -130,7 +130,7 @@ let recipeChoice = {};         // id -> chosen index, for items with multiple al
 // ships one tool; add more entries here as new features are built, e.g.:
 // { id: "smelting", icon: "\u2668\ufe0f", name: "製錬計算機", tagline: "Smelting Calculator", active: false, href: "smelting.html" }
 const FEATURES = [
-  { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: false, href: "home.html" },
+  { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: false, href: "index.html" },
   { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: true, href: null },
   { id: "motd", icon: "📜", name: "MOTDジェネレーター", tagline: "Server List Message Editor", active: false, href: "motd.html" },
   { id: "pack", icon: "🧩", name: "リソースパック情報ジェネレーター", tagline: "pack.mcmeta / manifest.json Generator", active: false, href: "pack.html" },
@@ -166,7 +166,8 @@ async function init() {
   }
 }
 
-// Works whether index.html is at the site root or in a GitHub Pages subpath.
+// Works whether this page is at the site root or in a GitHub Pages subpath
+// (this file is loaded from craft.html, but the logic doesn't care about the filename).
 function getBasePath() {
   const path = window.location.pathname;
   const dir = path.endsWith("/") ? path : path.substring(0, path.lastIndexOf("/") + 1);

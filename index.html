@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MineLab | クラフト計算機 - Minecraft 素材計算サイト</title>
+<meta name="description" content="Minecraftで作りたいアイテムと個数を指定すると、最終的に必要な素材を自動計算するツールです。">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        type="button"
+        aria-label="機能メニュー / Menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a class="brand" href="home.html" aria-label="MineLab ホームへ / Go to MineLab home">
+        <span class="brand-mark" aria-hidden="true">⛏</span>
+        <div class="brand-text">
+          <span class="brand-title">MineLab</span>
+          <span class="brand-sub" id="brand-feature-label" data-i18n="brand.tagline">クラフト計算機</span>
+        </div>
+      </a>
+    </div>
+    <div class="header-actions">
+      <div class="lang-select-wrap">
+        <select id="lang-select" aria-label="言語切り替え / Language">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <label class="theme-switch" for="theme-switch">
+        <span class="switch-icon switch-icon-sun" aria-hidden="true">☀</span>
+        <span class="switch-track">
+          <input type="checkbox" id="theme-switch" aria-label="ダークモード切り替え">
+          <span class="switch-thumb"></span>
+        </span>
+        <span class="switch-icon switch-icon-moon" aria-hidden="true">☾</span>
+      </label>
+    </div>
+  </div>
+
+  <nav id="nav-menu" class="nav-menu" aria-label="機能メニュー" hidden>
+    <ul id="nav-menu-list" class="nav-menu-list">
+      <!-- populated by JS from the FEATURES list -->
+    </ul>
+  </nav>
+</header>
+
+<main class="layout">
+
+  <!-- STEP 01 : SELECT ITEMS -->
+  <section class="panel" id="panel-select" aria-labelledby="select-heading">
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.select">STEP 01 — INPUT</span>
+      <h2 id="select-heading" data-i18n="heading.select">作りたいアイテム</h2>
+    </div>
+
+    <div class="search-wrap">
+      <span class="search-icon" aria-hidden="true">🔎</span>
+      <input
+        type="text"
+        id="item-search"
+        class="search-input"
+        data-i18n-placeholder="search.placeholder"
+        placeholder="アイテムを検索... (例: ピストン / piston / minecraft:piston)"
+        autocomplete="off"
+        role="combobox"
+        aria-expanded="false"
+        aria-controls="search-results"
+        aria-autocomplete="list"
+      >
+      <div id="search-results" class="search-results" role="listbox" hidden></div>
+    </div>
+
+    <div id="selected-list-head" class="selected-list-head" hidden>
+      <button id="clear-selected" class="ghost-btn ghost-btn-danger" type="button" data-i18n="btn.clearAll">全て削除</button>
+    </div>
+
+    <ul id="selected-list" class="selected-list" aria-live="polite">
+      <!-- populated by JS -->
+    </ul>
+
+    <p id="empty-select-hint" class="empty-hint" data-i18n="hint.emptySelect">
+      上の検索欄からアイテムを選ぶと、ここに追加されます。
+    </p>
+  </section>
+
+  <!-- STEP 02 : RESULT SUMMARY -->
+  <section class="panel" id="panel-summary" aria-labelledby="summary-heading" hidden>
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.summary">STEP 02 — RESULT</span>
+      <h2 id="summary-heading" data-i18n="heading.summary">必要な材料（最終素材）</h2>
+    </div>
+    <div class="table-wrap">
+      <table class="materials-table" id="materials-table">
+        <thead>
+          <tr>
+            <th data-i18n="table.item">材料</th>
+            <th class="num" data-i18n="table.count">必要数</th>
+            <th class="num" data-i18n="table.stack">スタック換算</th>
+          </tr>
+        </thead>
+        <tbody id="materials-tbody"></tbody>
+      </table>
+    </div>
+    <p class="table-footnote" data-i18n="summary.footnote">
+      レシピが存在しないアイテムは、そのまま採集・入手が必要な素材として扱われます。
+    </p>
+  </section>
+
+  <!-- STEP 03 : BREAKDOWN -->
+  <section class="panel" id="panel-detail" aria-labelledby="detail-heading" hidden>
+    <div class="panel-head panel-head-row">
+      <div>
+        <span class="panel-eyebrow" data-i18n="eyebrow.detail">STEP 03 — BREAKDOWN</span>
+        <h2 id="detail-heading" data-i18n="heading.detail">クラフト内訳</h2>
+      </div>
+      <div class="detail-controls">
+        <button id="expand-all" class="ghost-btn" type="button" data-i18n="btn.expandAll">全て展開</button>
+        <button id="collapse-all" class="ghost-btn" type="button" data-i18n="btn.collapseAll">全て閉じる</button>
+      </div>
+    </div>
+    <div id="detail-tree" class="detail-tree"></div>
+  </section>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.disclaimer">
+      本サイトは非公式のファンメイドツールです。Minecraft および Mojang とは関係ありません。<br>
+      一部コンテンツの生成にAIアシスタントを利用しています。<br>
+      © 2026 MineLab. All rights reserved.
+    </p>
+  </footer>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

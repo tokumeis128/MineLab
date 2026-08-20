@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MineLab | MOTDジェネレーター - サーバー説明文エディター</title>
+<meta name="description" content="Minecraftサーバーの一覧に表示されるMOTD（サーバー説明文）を、色や書式を選びながらプレビュー付きで作成できるツールです。">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/motd.css">
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        type="button"
+        aria-label="機能メニュー / Menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a class="brand" href="home.html" aria-label="MineLab ホームへ / Go to MineLab home">
+        <span class="brand-mark" aria-hidden="true">⛏</span>
+        <div class="brand-text">
+          <span class="brand-title">MineLab</span>
+          <span class="brand-sub" id="brand-feature-label" data-i18n="brand.tagline">MOTDジェネレーター</span>
+        </div>
+      </a>
+    </div>
+    <div class="header-actions">
+      <div class="lang-select-wrap">
+        <select id="lang-select" aria-label="言語切り替え / Language">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <label class="theme-switch" for="theme-switch">
+        <span class="switch-icon switch-icon-sun" aria-hidden="true">☀</span>
+        <span class="switch-track">
+          <input type="checkbox" id="theme-switch" aria-label="ダークモード切り替え">
+          <span class="switch-thumb"></span>
+        </span>
+        <span class="switch-icon switch-icon-moon" aria-hidden="true">☾</span>
+      </label>
+    </div>
+  </div>
+
+  <nav id="nav-menu" class="nav-menu" aria-label="機能メニュー" hidden>
+    <ul id="nav-menu-list" class="nav-menu-list">
+      <!-- populated by JS from the FEATURES list -->
+    </ul>
+  </nav>
+</header>
+
+<main class="layout">
+
+  <!-- STEP 01 : EDITOR -->
+  <section class="panel" id="panel-editor" aria-labelledby="editor-heading">
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.editor">STEP 01 — INPUT</span>
+      <h2 id="editor-heading" data-i18n="heading.editor">MOTDを編集</h2>
+    </div>
+
+    <p class="motd-help" data-i18n="hint.howTo">
+      下の欄に文章を入力し、色や太字などを付けたい範囲をドラッグして選択してから、ボタンを押すと適用されます。
+    </p>
+
+    <div class="motd-toolbar" role="toolbar" aria-label="書式ツールバー">
+      <div class="toolbar-group">
+        <span class="toolbar-group-label" data-i18n="toolbar.color">色</span>
+        <div class="color-grid" id="color-grid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+      <div class="toolbar-group">
+        <span class="toolbar-group-label" data-i18n="toolbar.format">書式</span>
+        <div class="format-btn-row" id="format-btn-row">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <div class="motd-line-wrap">
+      <label class="motd-line-label" for="motd-text">
+        <span data-i18n="label.motdText">MOTD（Enterで改行 / 2行まで）</span>
+      </label>
+      <textarea id="motd-text" class="motd-input motd-textarea" rows="2" maxlength="400" autocomplete="off" spellcheck="false"></textarea>
+      <div class="motd-line-stats">
+        <span class="motd-char-count" id="count-line1">1行目: 0 / 45</span>
+        <span class="motd-char-count" id="count-line2">2行目: 0 / 45</span>
+      </div>
+    </div>
+
+    <div class="motd-editor-actions">
+      <button id="motd-clear" class="ghost-btn ghost-btn-danger" type="button" data-i18n="btn.clearMotd">全て削除</button>
+    </div>
+  </section>
+
+  <!-- STEP 02 : PREVIEW -->
+  <section class="panel" id="panel-preview" aria-labelledby="preview-heading">
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.preview">STEP 02 — PREVIEW</span>
+      <h2 id="preview-heading" data-i18n="heading.preview">プレビュー</h2>
+    </div>
+    <p class="motd-help" data-i18n="hint.previewNote">
+      マルチプレイのサーバー一覧の表示を再現しています。実際の見え方は環境により多少異なります。
+    </p>
+
+    <div class="server-row-preview">
+      <div class="server-icon" aria-hidden="true">⛏</div>
+      <div class="server-row-main">
+        <div class="server-row-motd" id="preview-motd">
+          <div class="motd-preview-line" id="preview-line1"></div>
+          <div class="motd-preview-line" id="preview-line2"></div>
+        </div>
+      </div>
+      <div class="server-row-side">
+        <div class="server-ping" aria-hidden="true">
+          <span class="ping-bar"></span><span class="ping-bar"></span><span class="ping-bar"></span><span class="ping-bar"></span>
+        </div>
+        <div class="server-players">0/20</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 03 : OUTPUT -->
+  <section class="panel" id="panel-output" aria-labelledby="output-heading">
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.output">STEP 03 — OUTPUT</span>
+      <h2 id="output-heading" data-i18n="heading.output">出力</h2>
+    </div>
+
+    <div class="output-block">
+      <div class="output-block-head">
+        <span class="output-block-title" data-i18n="output.raw">§コード（プラグインの/motdコマンドなどに）</span>
+        <button class="ghost-btn copy-btn" type="button" data-copy-target="output-raw" data-i18n="btn.copy">コピー</button>
+      </div>
+      <pre class="output-box" id="output-raw"></pre>
+    </div>
+
+    <div class="output-block">
+      <div class="output-block-head">
+        <span class="output-block-title" data-i18n="output.properties">server.properties 用</span>
+        <button class="ghost-btn copy-btn" type="button" data-copy-target="output-properties" data-i18n="btn.copy">コピー</button>
+      </div>
+      <pre class="output-box" id="output-properties"></pre>
+      <p class="output-note" data-i18n="output.propertiesNote">
+        server.properties の motd= の行をこの内容で置き換えてください（\n はそのまま2文字として貼り付けます）。
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.disclaimer">
+      本サイトは非公式のファンメイドツールです。Minecraft および Mojang とは関係ありません。<br>
+      一部コンテンツの生成にAIアシスタントを利用しています。<br>
+      © 2026 MineLab. All rights reserved.
+    </p>
+  </footer>
+
+</main>
+
+<script src="js/motd.js"></script>
+</body>
+</html>

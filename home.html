@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MineLab | Minecraft便利ツール集</title>
+<meta name="description" content="Minecraft向けの便利ツールをまとめたサイトです。クラフト計算機、MOTDジェネレーター、リソースパック情報ジェネレーターなどを提供しています。">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        type="button"
+        aria-label="機能メニュー / Menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a class="brand" href="home.html" aria-label="MineLab ホームへ / Go to MineLab home">
+        <span class="brand-mark" aria-hidden="true">⛏</span>
+        <div class="brand-text">
+          <span class="brand-title">MineLab</span>
+          <span class="brand-sub" id="brand-feature-label" data-i18n="brand.tagline">ホーム</span>
+        </div>
+      </a>
+    </div>
+    <div class="header-actions">
+      <div class="lang-select-wrap">
+        <select id="lang-select" aria-label="言語切り替え / Language">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <label class="theme-switch" for="theme-switch">
+        <span class="switch-icon switch-icon-sun" aria-hidden="true">☀</span>
+        <span class="switch-track">
+          <input type="checkbox" id="theme-switch" aria-label="ダークモード切り替え">
+          <span class="switch-thumb"></span>
+        </span>
+        <span class="switch-icon switch-icon-moon" aria-hidden="true">☾</span>
+      </label>
+    </div>
+  </div>
+
+  <nav id="nav-menu" class="nav-menu" aria-label="機能メニュー" hidden>
+    <ul id="nav-menu-list" class="nav-menu-list">
+      <!-- populated by JS from the FEATURES list -->
+    </ul>
+  </nav>
+</header>
+
+<main class="layout home-layout">
+
+  <section class="home-hero">
+    <span class="home-hero-eyebrow" data-i18n="hero.eyebrow">FAN-MADE TOOLKIT</span>
+    <h1 class="home-hero-title" data-i18n="hero.title">MineLabへようこそ</h1>
+    <p class="home-hero-body" data-i18n="hero.body">
+      Minecraftを遊ぶ・作る人のための、ちょっと便利なツールを集めたサイトです。素材の計算や、サーバー説明文（MOTD）の作成、リソースパックのメタデータ生成などを、ブラウザだけで手軽に行えます。下から使いたい機能を選んでください。
+    </p>
+  </section>
+
+  <section class="home-features" aria-labelledby="home-features-heading">
+    <h2 id="home-features-heading" class="home-section-title" data-i18n="hero.featuresHeading">機能一覧</h2>
+    <div class="feature-grid" id="feature-grid">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.disclaimer">
+      本サイトは非公式のファンメイドツールです。Minecraft および Mojang とは関係ありません。<br>
+      一部コンテンツの生成にAIアシスタントを利用しています。<br>
+      © 2026 MineLab. All rights reserved.
+    </p>
+  </footer>
+
+</main>
+
+<script src="js/home.js"></script>
+</body>
+</html>

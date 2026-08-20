@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MineLab | リソースパック情報ジェネレーター - pack.mcmeta / manifest.json</title>
+<meta name="description" content="Minecraftのリソースパック用メタデータ（Java版のpack.mcmeta、統合版のmanifest.json）を、対応バージョンや説明文を選んで作成できるツールです。">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pack.css">
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        type="button"
+        aria-label="機能メニュー / Menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a class="brand" href="home.html" aria-label="MineLab ホームへ / Go to MineLab home">
+        <span class="brand-mark" aria-hidden="true">⛏</span>
+        <div class="brand-text">
+          <span class="brand-title">MineLab</span>
+          <span class="brand-sub" id="brand-feature-label" data-i18n="brand.tagline">リソースパック情報ジェネレーター</span>
+        </div>
+      </a>
+    </div>
+    <div class="header-actions">
+      <div class="lang-select-wrap">
+        <select id="lang-select" aria-label="言語切り替え / Language">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <label class="theme-switch" for="theme-switch">
+        <span class="switch-icon switch-icon-sun" aria-hidden="true">☀</span>
+        <span class="switch-track">
+          <input type="checkbox" id="theme-switch" aria-label="ダークモード切り替え">
+          <span class="switch-thumb"></span>
+        </span>
+        <span class="switch-icon switch-icon-moon" aria-hidden="true">☾</span>
+      </label>
+    </div>
+  </div>
+
+  <nav id="nav-menu" class="nav-menu" aria-label="機能メニュー" hidden>
+    <ul id="nav-menu-list" class="nav-menu-list">
+      <!-- populated by JS from the FEATURES list -->
+    </ul>
+  </nav>
+</header>
+
+<main class="layout">
+
+  <!-- STEP 01 : PLATFORM -->
+  <section class="panel" id="panel-platform" aria-labelledby="platform-heading">
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.platform">STEP 01 — PLATFORM</span>
+      <h2 id="platform-heading" data-i18n="heading.platform">対応プラットフォームを選択</h2>
+    </div>
+    <p class="pack-help" data-i18n="hint.platform">
+      作りたいリソースパックの種類を選んでください。Java版は pack.mcmeta、統合版（Bedrock）は manifest.json を生成します。
+    </p>
+    <div class="platform-choice-row" id="platform-choice-row" role="radiogroup" aria-label="Platform">
+      <button type="button" class="platform-card" id="platform-card-je" data-platform="je" role="radio" aria-checked="false">
+        <span class="platform-card-icon" aria-hidden="true">☕</span>
+        <span class="platform-card-body">
+          <span class="platform-card-title" data-i18n="platform.je.title">Java Edition</span>
+          <span class="platform-card-desc" data-i18n="platform.je.desc">pack.mcmeta を生成</span>
+        </span>
+        <span class="platform-card-check" aria-hidden="true">✓</span>
+      </button>
+      <button type="button" class="platform-card" id="platform-card-be" data-platform="be" role="radio" aria-checked="false">
+        <span class="platform-card-icon" aria-hidden="true">🪨</span>
+        <span class="platform-card-body">
+          <span class="platform-card-title" data-i18n="platform.be.title">Bedrock Edition（統合版）</span>
+          <span class="platform-card-desc" data-i18n="platform.be.desc">manifest.json を生成</span>
+        </span>
+        <span class="platform-card-check" aria-hidden="true">✓</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- STEP 02 : JE INPUT -->
+  <section class="panel" id="panel-je" aria-labelledby="je-heading" hidden>
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.jeInput">STEP 02 — INPUT (Java Edition)</span>
+      <h2 id="je-heading" data-i18n="heading.jeInput">pack.mcmeta の内容</h2>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="je-version" data-i18n="label.jeVersion">対応するMinecraftのバージョン</label>
+      <select id="je-version" class="pack-select"></select>
+      <p class="field-hint" id="je-version-hint"></p>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="je-description" data-i18n="label.description">説明文（description）</label>
+      <textarea id="je-description" class="pack-input pack-textarea" rows="2" maxlength="200" placeholder="My Resource Pack" data-i18n-placeholder="placeholder.description"></textarea>
+    </div>
+
+    <div class="pack-editor-actions">
+      <button id="je-generate" class="primary-btn" type="button" data-i18n="btn.generate">生成する</button>
+    </div>
+  </section>
+
+  <!-- STEP 02 : BE INPUT -->
+  <section class="panel" id="panel-be" aria-labelledby="be-heading" hidden>
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.beInput">STEP 02 — INPUT (Bedrock Edition)</span>
+      <h2 id="be-heading" data-i18n="heading.beInput">manifest.json の内容</h2>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="be-name" data-i18n="label.packName">パック名（name）</label>
+      <input type="text" id="be-name" class="pack-input" maxlength="100" placeholder="My Resource Pack" data-i18n-placeholder="placeholder.description">
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="be-description" data-i18n="label.description">説明文（description）</label>
+      <textarea id="be-description" class="pack-input pack-textarea" rows="2" maxlength="200" placeholder="My Resource Pack" data-i18n-placeholder="placeholder.description"></textarea>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="be-engine-version" data-i18n="label.beEngineVersion">対象とする最小のゲームバージョン（min_engine_version）</label>
+      <select id="be-engine-version" class="pack-select"></select>
+    </div>
+
+    <div class="field-group">
+      <span class="field-label" data-i18n="label.packVersion">パック自体のバージョン（Minecraftのバージョンとは別・自由に変更可）</span>
+      <div class="version-triplet" id="be-pack-version">
+        <input type="number" min="0" max="999" value="1" class="version-part" id="be-ver-major" aria-label="Major">
+        <span class="version-dot">.</span>
+        <input type="number" min="0" max="999" value="0" class="version-part" id="be-ver-minor" aria-label="Minor">
+        <span class="version-dot">.</span>
+        <input type="number" min="0" max="999" value="0" class="version-part" id="be-ver-patch" aria-label="Patch">
+      </div>
+    </div>
+
+    <div class="field-group">
+      <span class="field-label" data-i18n="label.headerUuid">ヘッダーUUID（header.uuid）</span>
+      <div class="uuid-row">
+        <input type="text" id="be-header-uuid" class="pack-input uuid-input" spellcheck="false" autocomplete="off" placeholder="00000000-0000-0000-0000-000000000000">
+        <button type="button" class="ghost-btn uuid-gen-btn" data-target="be-header-uuid" data-i18n="btn.generateUuid">自動生成</button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <span class="field-label" data-i18n="label.moduleUuid">モジュールUUID（modules[].uuid）</span>
+      <div class="uuid-row">
+        <input type="text" id="be-module-uuid" class="pack-input uuid-input" spellcheck="false" autocomplete="off" placeholder="00000000-0000-0000-0000-000000000000">
+        <button type="button" class="ghost-btn uuid-gen-btn" data-target="be-module-uuid" data-i18n="btn.generateUuid">自動生成</button>
+      </div>
+      <p class="field-hint" data-i18n="hint.uuid">2つのUUIDは別々の値にしてください。他のパックと被らないよう、公開する際は自動生成した値をそのまま使うことをおすすめします。</p>
+    </div>
+
+    <div class="pack-editor-actions">
+      <button id="be-generate" class="primary-btn" type="button" data-i18n="btn.generate">生成する</button>
+    </div>
+  </section>
+
+  <!-- STEP 03 : OUTPUT -->
+  <section class="panel" id="panel-pack-output" aria-labelledby="pack-output-heading" hidden>
+    <div class="panel-head">
+      <span class="panel-eyebrow" data-i18n="eyebrow.packOutput">STEP 03 — OUTPUT</span>
+      <h2 id="pack-output-heading" data-i18n="heading.packOutput">出力</h2>
+    </div>
+
+    <div class="output-block">
+      <div class="output-block-head">
+        <span class="output-block-title" id="pack-output-filename">pack.mcmeta</span>
+        <div class="output-block-actions">
+          <button class="ghost-btn copy-btn" type="button" data-copy-target="pack-output-json" data-i18n="btn.copy">コピー</button>
+          <button class="ghost-btn" type="button" id="pack-download-btn" data-i18n="btn.download">ファイルとして保存</button>
+        </div>
+      </div>
+      <pre class="output-box" id="pack-output-json"></pre>
+      <p class="output-note" id="pack-output-note"></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.disclaimer">
+      本サイトは非公式のファンメイドツールです。Minecraft および Mojang とは関係ありません。<br>
+      一部コンテンツの生成にAIアシスタントを利用しています。<br>
+      © 2026 MineLab. All rights reserved.
+    </p>
+  </footer>
+
+</main>
+
+<script src="js/pack.js"></script>
+</body>
+</html>

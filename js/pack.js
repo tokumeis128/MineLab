@@ -82,8 +82,8 @@ let currentLang = "ja";
    Feature / tool switcher (hamburger menu)
    ========================================================= */
 const FEATURES = [
-  { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: false, href: "home.html" },
-  { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: false, href: "index.html" },
+  { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: false, href: "index.html" },
+  { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: false, href: "craft.html" },
   { id: "motd", icon: "📜", name: "MOTDジェネレーター", tagline: "Server List Message Editor", active: false, href: "motd.html" },
   { id: "pack", icon: "🧩", name: "リソースパック情報ジェネレーター", tagline: "pack.mcmeta / manifest.json Generator", active: true, href: null },
   { id: "properties", icon: "🖥", name: "server.propertiesエディター", tagline: "Server Properties Editor", active: false, href: "properties.html" },

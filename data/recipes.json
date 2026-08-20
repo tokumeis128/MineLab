@@ -1,0 +1,873 @@
+{
+  "minecraft:oak_planks": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:oak_log", "count": 1 } ],
+    "result_count": 4
+  },
+  "minecraft:stick": {
+    "type": "shaped",
+    "width": 1,
+    "height": 2,
+    "pattern": ["P", "P"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 4
+  },
+  "minecraft:torch": {
+    "type": "shaped",
+    "width": 1,
+    "height": 2,
+    "pattern": ["C", "S"],
+    "key": { "C": "minecraft:coal", "S": "minecraft:stick" },
+    "result_count": 4
+  },
+  "minecraft:redstone_torch": {
+    "type": "shaped",
+    "width": 1,
+    "height": 2,
+    "pattern": ["R", "S"],
+    "key": { "R": "minecraft:redstone", "S": "minecraft:stick" },
+    "result_count": 1
+  },
+  "minecraft:redstone_block": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["RRR", "RRR", "RRR"],
+    "key": { "R": "minecraft:redstone" },
+    "result_count": 1
+  },
+  "minecraft:iron_block": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["III", "III", "III"],
+    "key": { "I": "minecraft:iron_ingot" },
+    "result_count": 1
+  },
+  "minecraft:glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": ["GGG", "GGG"],
+    "key": { "G": "minecraft:glass" },
+    "result_count": 16
+  },
+  "minecraft:chest": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["PPP", "P P", "PPP"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 1
+  },
+  "minecraft:crafting_table": {
+    "type": "shaped",
+    "width": 2,
+    "height": 2,
+    "pattern": ["PP", "PP"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 1
+  },
+  "minecraft:furnace": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["CCC", "C C", "CCC"],
+    "key": { "C": "minecraft:cobblestone" },
+    "result_count": 1
+  },
+  "minecraft:hopper": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["I I", "ICI", " I "],
+    "key": { "I": "minecraft:iron_ingot", "C": "minecraft:chest" },
+    "result_count": 1
+  },
+  "minecraft:piston": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["PPP", "CIC", "CRC"],
+    "key": { "P": "minecraft:oak_planks", "C": "minecraft:cobblestone", "I": "minecraft:iron_ingot", "R": "minecraft:redstone" },
+    "result_count": 1
+  },
+  "minecraft:sticky_piston": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:piston", "count": 1 }, { "item": "minecraft:slime_ball", "count": 1 } ],
+    "result_count": 1
+  },
+  "minecraft:observer": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["CCC", "RQR", "CCC"],
+    "key": { "C": "minecraft:cobblestone", "R": "minecraft:redstone", "Q": "minecraft:quartz" },
+    "result_count": 1
+  },
+  "minecraft:repeater": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": ["TRT", "SSS"],
+    "key": { "T": "minecraft:redstone_torch", "R": "minecraft:redstone", "S": "minecraft:stone" },
+    "result_count": 1
+  },
+  "minecraft:comparator": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": [" T ", "TQT", "SSS"],
+    "key": { "T": "minecraft:redstone_torch", "Q": "minecraft:quartz", "S": "minecraft:stone" },
+    "result_count": 1
+  },
+  "minecraft:dropper": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["CCC", "C C", "CRC"],
+    "key": { "C": "minecraft:cobblestone", "R": "minecraft:redstone" },
+    "result_count": 1
+  },
+  "minecraft:dispenser": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["CCC", "CBC", "CRC"],
+    "key": { "C": "minecraft:cobblestone", "B": "minecraft:bow", "R": "minecraft:redstone" },
+    "result_count": 1
+  },
+  "minecraft:redstone_lamp": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": [" G ", "GRG", " G "],
+    "key": { "G": "minecraft:glowstone", "R": "minecraft:redstone" },
+    "result_count": 1
+  },
+  "minecraft:lever": {
+    "type": "shaped",
+    "width": 1,
+    "height": 2,
+    "pattern": ["S", "C"],
+    "key": { "S": "minecraft:stick", "C": "minecraft:cobblestone" },
+    "result_count": 1
+  },
+  "minecraft:stone_button": {
+    "type": "shaped",
+    "width": 1,
+    "height": 1,
+    "pattern": ["S"],
+    "key": { "S": "minecraft:stone" },
+    "result_count": 1
+  },
+  "minecraft:oak_button": {
+    "type": "shaped",
+    "width": 1,
+    "height": 1,
+    "pattern": ["P"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 1
+  },
+  "minecraft:stone_pressure_plate": {
+    "type": "shaped",
+    "width": 2,
+    "height": 1,
+    "pattern": ["SS"],
+    "key": { "S": "minecraft:stone" },
+    "result_count": 1
+  },
+  "minecraft:oak_pressure_plate": {
+    "type": "shaped",
+    "width": 2,
+    "height": 1,
+    "pattern": ["PP"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 1
+  },
+  "minecraft:light_weighted_pressure_plate": {
+    "type": "shaped",
+    "width": 2,
+    "height": 1,
+    "pattern": ["GG"],
+    "key": { "G": "minecraft:gold_ingot" },
+    "result_count": 1
+  },
+  "minecraft:heavy_weighted_pressure_plate": {
+    "type": "shaped",
+    "width": 2,
+    "height": 1,
+    "pattern": ["II"],
+    "key": { "I": "minecraft:iron_ingot" },
+    "result_count": 1
+  },
+  "minecraft:tnt": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["GSG", "SGS", "GSG"],
+    "key": { "G": "minecraft:gunpowder", "S": "minecraft:sand" },
+    "result_count": 1
+  },
+  "minecraft:tnt_minecart": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:tnt", "count": 1 }, { "item": "minecraft:minecart", "count": 1 } ],
+    "result_count": 1
+  },
+  "minecraft:rail": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["I I", "ISI", "I I"],
+    "key": { "I": "minecraft:iron_ingot", "S": "minecraft:stick" },
+    "result_count": 16
+  },
+  "minecraft:powered_rail": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["G G", "GSG", "GRG"],
+    "key": { "G": "minecraft:gold_ingot", "S": "minecraft:stick", "R": "minecraft:redstone" },
+    "result_count": 6
+  },
+  "minecraft:detector_rail": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["I I", "IPI", "IRI"],
+    "key": { "I": "minecraft:iron_ingot", "P": "minecraft:stone_pressure_plate", "R": "minecraft:redstone" },
+    "result_count": 6
+  },
+  "minecraft:activator_rail": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["ISI", "ITI", "ISI"],
+    "key": { "I": "minecraft:iron_ingot", "S": "minecraft:stick", "T": "minecraft:redstone_torch" },
+    "result_count": 6
+  },
+  "minecraft:minecart": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": ["I I", "III"],
+    "key": { "I": "minecraft:iron_ingot" },
+    "result_count": 1
+  },
+  "minecraft:hopper_minecart": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:hopper", "count": 1 }, { "item": "minecraft:minecart", "count": 1 } ],
+    "result_count": 1
+  },
+  "minecraft:ladder": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["S S", "SSS", "S S"],
+    "key": { "S": "minecraft:stick" },
+    "result_count": 3
+  },
+  "minecraft:oak_door": {
+    "type": "shaped",
+    "width": 2,
+    "height": 3,
+    "pattern": ["PP", "PP", "PP"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 3
+  },
+  "minecraft:iron_door": {
+    "type": "shaped",
+    "width": 2,
+    "height": 3,
+    "pattern": ["II", "II", "II"],
+    "key": { "I": "minecraft:iron_ingot" },
+    "result_count": 3
+  },
+  "minecraft:oak_trapdoor": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": ["PPP", "PPP"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 2
+  },
+  "minecraft:iron_trapdoor": {
+    "type": "shaped",
+    "width": 2,
+    "height": 2,
+    "pattern": ["II", "II"],
+    "key": { "I": "minecraft:iron_ingot" },
+    "result_count": 1
+  },
+  "minecraft:oak_boat": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": ["PPP", "P P"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 1
+  },
+  "minecraft:iron_bars": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": ["III", "III"],
+    "key": { "I": "minecraft:iron_ingot" },
+    "result_count": 16
+  },
+  "minecraft:shulker_box": {
+    "type": "shaped",
+    "width": 1,
+    "height": 3,
+    "pattern": ["S", "C", "S"],
+    "key": { "S": "minecraft:shulker_shell", "C": "minecraft:chest" },
+    "result_count": 1
+  },
+  "minecraft:note_block": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["PPP", "PRP", "PPP"],
+    "key": { "P": "minecraft:oak_planks", "R": "minecraft:redstone" },
+    "result_count": 1
+  },
+  "minecraft:oak_slab": {
+    "type": "shaped",
+    "width": 3,
+    "height": 1,
+    "pattern": ["PPP"],
+    "key": { "P": "minecraft:oak_planks" },
+    "result_count": 6
+  },
+  "minecraft:daylight_detector": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": ["GGG", "QQQ", "SSS"],
+    "key": { "G": "minecraft:glass", "Q": "minecraft:quartz", "S": "minecraft:oak_slab" },
+    "result_count": 1
+  },
+  "minecraft:target": {
+    "type": "shaped",
+    "width": 3,
+    "height": 3,
+    "pattern": [" R ", "RHR", " R "],
+    "key": { "R": "minecraft:redstone", "H": "minecraft:hay_bale" },
+    "result_count": 1
+  },
+
+  "minecraft:white_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:white_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:orange_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:orange_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:magenta_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:magenta_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:light_blue_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:light_blue_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:yellow_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:yellow_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:lime_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:lime_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:pink_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:pink_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:gray_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:gray_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:light_gray_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:light_gray_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:cyan_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:cyan_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:purple_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:purple_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:blue_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:blue_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:brown_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:brown_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:green_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:green_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:red_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:red_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:black_terracotta": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:black_dye", "count": 1 }, { "item": "minecraft:terracotta", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:white_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:white_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:orange_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:orange_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:magenta_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:magenta_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:light_blue_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:light_blue_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:yellow_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:yellow_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:lime_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:lime_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:pink_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:pink_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:gray_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:gray_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:light_gray_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:light_gray_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:cyan_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:cyan_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:purple_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:purple_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:blue_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:blue_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:brown_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:brown_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:green_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:green_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:red_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:red_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:black_stained_glass": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:black_dye", "count": 1 }, { "item": "minecraft:glass", "count": 8 } ],
+    "result_count": 8
+  },
+  "minecraft:white_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:white_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:orange_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:orange_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:magenta_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:magenta_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:light_blue_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:light_blue_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:yellow_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:yellow_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:lime_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:lime_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:pink_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:pink_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:gray_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:gray_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:light_gray_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:light_gray_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:cyan_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:cyan_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:purple_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:purple_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:blue_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:blue_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:brown_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:brown_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:green_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:green_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:red_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:red_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+  "minecraft:black_concrete_powder": {
+    "type": "shapeless",
+    "ingredients": [ { "item": "minecraft:black_dye", "count": 4 }, { "item": "minecraft:sand", "count": 4 }, { "item": "minecraft:gravel", "count": 4 } ],
+    "result_count": 8
+  },
+
+  "minecraft:bone_meal": {
+    "type": "shapeless",
+    "ingredients": [
+      {
+        "item": "minecraft:bone",
+        "count": 1
+      }
+    ],
+    "result_count": 3
+  },
+  "minecraft:white_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:bone_meal", "count": 1}], "result_count": 1},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:lily_of_the_valley", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:orange_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:orange_tulip", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:magenta_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:allium", "count": 1}], "result_count": 1},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:lilac", "count": 1}], "result_count": 2}
+  ],
+  "minecraft:light_blue_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:blue_orchid", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:yellow_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:dandelion", "count": 1}], "result_count": 1},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:sunflower", "count": 1}], "result_count": 2}
+  ],
+  "minecraft:lime_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:green_dye", "count": 1}, {"item": "minecraft:white_dye", "count": 1}], "result_count": 2}
+  ],
+  "minecraft:pink_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:peony", "count": 1}], "result_count": 2},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:pink_tulip", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:gray_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:black_dye", "count": 1}, {"item": "minecraft:white_dye", "count": 1}], "result_count": 2}
+  ],
+  "minecraft:light_gray_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:white_tulip", "count": 1}], "result_count": 1},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:oxeye_daisy", "count": 1}], "result_count": 1},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:azure_bluet", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:cyan_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:blue_dye", "count": 1}, {"item": "minecraft:green_dye", "count": 1}], "result_count": 2}
+  ],
+  "minecraft:purple_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:blue_dye", "count": 1}, {"item": "minecraft:red_dye", "count": 1}], "result_count": 2}
+  ],
+  "minecraft:blue_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:lapis_lazuli", "count": 1}], "result_count": 1},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:cornflower", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:brown_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:cocoa_beans", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:red_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:poppy", "count": 1}], "result_count": 1},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:rose_bush", "count": 1}], "result_count": 2},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:beetroot", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:black_dye": [
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:ink_sac", "count": 1}], "result_count": 1},
+    {"type": "shapeless", "ingredients": [{"item": "minecraft:wither_rose", "count": 1}], "result_count": 1}
+  ],
+  "minecraft:white_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:white_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:orange_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:orange_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:magenta_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:magenta_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:light_blue_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:light_blue_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:yellow_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:yellow_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:lime_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:lime_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:pink_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:pink_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:gray_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:gray_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:light_gray_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:light_gray_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:cyan_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:cyan_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:purple_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:purple_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:blue_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:blue_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:brown_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:brown_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:green_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:green_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:red_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:red_stained_glass"
+    },
+    "result_count": 16
+  },
+  "minecraft:black_stained_glass_pane": {
+    "type": "shaped",
+    "width": 3,
+    "height": 2,
+    "pattern": [
+      "GGG",
+      "GGG"
+    ],
+    "key": {
+      "G": "minecraft:black_stained_glass"
+    },
+    "result_count": 16
+  }
+}

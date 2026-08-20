@@ -1,0 +1,227 @@
+/* =========================================================
+   Resource pack metadata generator — page-specific styles
+   Reuses design tokens (--panel, --card, --border, --accent, etc.)
+   defined in css/style.css.
+   ========================================================= */
+
+.pack-help {
+  margin: 0 0 16px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Platform choice (STEP 01)
+   ========================================================= */
+.platform-choice-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 560px) {
+  .platform-choice-row { grid-template-columns: 1fr; }
+}
+
+.platform-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+.platform-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.platform-card.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.platform-card-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  background: var(--panel);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.platform-card-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.platform-card-title { font-size: 14.5px; font-weight: 800; }
+.platform-card-desc { font-size: 12px; color: var(--text-faint); font-family: var(--font-mono); }
+
+.platform-card-check {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: var(--accent);
+  font-weight: 800;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.platform-card.selected .platform-card-check { opacity: 1; }
+
+/* =========================================================
+   Fields
+   ========================================================= */
+.field-group { margin-bottom: 16px; }
+.field-group:last-of-type { margin-bottom: 0; }
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.field-hint {
+  margin: 6px 2px 0;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+.pack-input,
+.pack-select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+  font-family: var(--font-display);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.pack-select { font-family: var(--font-display); cursor: pointer; }
+.pack-input:focus,
+.pack-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--panel);
+}
+
+.pack-textarea { resize: none; line-height: 1.6; font-family: var(--font-mono); font-size: 13.5px; }
+
+.uuid-input { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.01em; }
+
+.pack-editor-actions { display: flex; justify-content: flex-end; margin-top: 18px; }
+
+/* =========================================================
+   UUID row
+   ========================================================= */
+.uuid-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.uuid-row .uuid-input { flex: 1 1 220px; min-width: 0; }
+.uuid-gen-btn { flex-shrink: 0; white-space: nowrap; }
+
+/* =========================================================
+   Version triplet (major.minor.patch number inputs)
+   ========================================================= */
+.version-triplet {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 220px;
+}
+.version-part {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 8px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  -moz-appearance: textfield;
+}
+.version-part::-webkit-outer-spin-button,
+.version-part::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.version-part:focus { outline: none; border-color: var(--accent); background: var(--panel); }
+.version-dot { color: var(--text-faint); font-weight: 800; }
+
+/* =========================================================
+   Output (shared look with output-box from motd.css, redefined
+   locally so this page doesn't depend on motd.css being loaded)
+   ========================================================= */
+.output-block { margin-bottom: 18px; }
+.output-block:last-child { margin-bottom: 0; }
+
+.output-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.output-block-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.output-block-actions { display: flex; gap: 8px; }
+
+.copy-btn.is-copied { background: var(--green-soft); color: var(--green); border-color: var(--green); }
+
+.output-box {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-all;
+  min-height: 1.7em;
+}
+
+.output-note {
+  margin: 8px 2px 0;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Primary (filled) button — used for "Generate"
+   ========================================================= */
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: linear-gradient(150deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 800;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+.primary-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.primary-btn:active { transform: translateY(0); }

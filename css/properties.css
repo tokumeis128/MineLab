@@ -1,0 +1,447 @@
+/* =========================================================
+   server.properties generator — page-specific styles
+   Reuses design tokens (--panel, --card, --border, --accent, etc.)
+   defined in css/style.css.
+   ========================================================= */
+
+.prop-help {
+  margin: 0 0 16px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Platform choice (STEP 01)
+   ========================================================= */
+.platform-choice-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 560px) {
+  .platform-choice-row { grid-template-columns: 1fr; }
+}
+
+.platform-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+.platform-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.platform-card.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.platform-card-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  background: var(--panel);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.platform-card-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.platform-card-title { font-size: 14.5px; font-weight: 800; }
+.platform-card-desc { font-size: 12px; color: var(--text-faint); font-family: var(--font-mono); }
+
+.platform-card-check {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: var(--accent);
+  font-weight: 800;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.platform-card.selected .platform-card-check { opacity: 1; }
+
+/* =========================================================
+   Fields
+   ========================================================= */
+.field-group { margin-bottom: 16px; }
+.field-group:last-of-type { margin-bottom: 0; }
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.field-hint {
+  margin: 6px 2px 0;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+.pack-input,
+.pack-select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+  font-family: var(--font-display);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.pack-select { font-family: var(--font-display); cursor: pointer; }
+.pack-input:focus,
+.pack-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--panel);
+}
+
+.pack-textarea { resize: none; line-height: 1.6; font-family: var(--font-mono); font-size: 13.5px; }
+
+.pack-editor-actions { display: flex; justify-content: flex-end; margin-top: 18px; }
+
+/* =========================================================
+   Numeric-only input (server-port, max-players, etc.)
+   ========================================================= */
+.pack-input.num-input {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  -moz-appearance: textfield;
+}
+.pack-input.num-input::-webkit-outer-spin-button,
+.pack-input.num-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* =========================================================
+   Sections within STEP 02 (grouped fields, collapsible)
+   ========================================================= */
+.prop-section {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: var(--card);
+}
+.prop-section:last-child { margin-bottom: 0; }
+
+.prop-section-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--card);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+  font-family: var(--font-display);
+}
+.prop-section-head:hover { background: var(--card-hover); }
+
+.prop-section-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  background: var(--panel);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.prop-section-title {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.prop-section-toggle {
+  color: var(--text-faint);
+  font-size: 11px;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+.prop-section.expanded .prop-section-toggle { transform: rotate(90deg); }
+
+.prop-section-body {
+  display: none;
+  padding: 16px 16px 18px;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+}
+.prop-section.expanded .prop-section-body { display: block; }
+
+/* =========================================================
+   Toggle switch (true / false fields)
+   ========================================================= */
+.toggle-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.toggle-field:last-child { margin-bottom: 0; }
+
+.toggle-field-text { min-width: 0; }
+.toggle-field-label { display: block; font-size: 12.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 3px; }
+.toggle-field-hint { display: block; font-size: 11px; color: var(--text-faint); line-height: 1.5; }
+
+.prop-toggle {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border-strong);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+.prop-toggle input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.prop-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--panel);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.prop-toggle input:checked ~ .prop-toggle-thumb {
+  transform: translateX(18px);
+  background: var(--accent);
+}
+.prop-toggle:has(input:checked) { background: var(--accent-soft); border-color: var(--accent); }
+
+/* =========================================================
+   Port field with random-generate dice button
+   ========================================================= */
+.port-row {
+  display: flex;
+  gap: 8px;
+}
+.port-row .pack-input { flex: 1 1 auto; min-width: 0; }
+.port-random-btn {
+  flex-shrink: 0;
+  width: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  padding: 0;
+}
+
+/* =========================================================
+   Superflat layer builder (generator-settings)
+   ========================================================= */
+.layer-builder-wrap {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-top: 4px;
+}
+
+.block-palette {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 12px;
+}
+@media (max-width: 560px) {
+  .block-palette { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.block-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 4px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-strong);
+  background: var(--card);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.1s ease, background 0.15s ease;
+}
+.block-swatch:hover { border-color: var(--accent); transform: translateY(-1px); background: var(--accent-soft); }
+.block-swatch-color {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -2px 3px rgba(0,0,0,0.2);
+}
+.block-swatch-label { font-size: 10.5px; font-weight: 700; text-align: center; line-height: 1.25; color: var(--text-muted); }
+
+.layer-stack-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.layer-stack {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2px;
+  min-height: 40px;
+  flex: 1;
+}
+
+.layer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.layer-row-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 2px rgba(0,0,0,0.2);
+}
+.layer-row-label {
+  flex: 1;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+.layer-row-remove {
+  border: none;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.layer-row-remove:hover { background: var(--redstone-soft); color: var(--redstone); }
+
+.layer-stack-empty {
+  color: var(--text-faint);
+  font-size: 12px;
+  text-align: center;
+  padding: 10px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.layer-stack-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.layer-preview {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  word-break: break-all;
+  line-height: 1.6;
+}
+.layer-preview strong { color: var(--text-muted); font-family: var(--font-display); }
+
+/* =========================================================
+   Output (shared look with output-box from motd.css, redefined
+   locally so this page doesn't depend on motd.css being loaded)
+   ========================================================= */
+.output-block { margin-bottom: 18px; }
+.output-block:last-child { margin-bottom: 0; }
+
+.output-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.output-block-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.output-block-actions { display: flex; gap: 8px; }
+
+.copy-btn.is-copied { background: var(--green-soft); color: var(--green); border-color: var(--green); }
+
+.output-box {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-all;
+  min-height: 1.7em;
+}
+
+.output-note {
+  margin: 8px 2px 0;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Primary (filled) button — used for "Generate"
+   ========================================================= */
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: linear-gradient(150deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 800;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+.primary-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.primary-btn:active { transform: translateY(0); }

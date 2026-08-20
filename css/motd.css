@@ -1,0 +1,279 @@
+/* =========================================================
+   MOTD Generator — page-specific styles
+   Reuses design tokens (--panel, --card, --border, --accent, etc.)
+   defined in css/style.css.
+   ========================================================= */
+
+.motd-help {
+  margin: 0 0 16px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Toolbar
+   ========================================================= */
+.motd-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px;
+  margin-bottom: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.toolbar-group { display: flex; flex-direction: column; gap: 8px; }
+
+.toolbar-group-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 6px;
+}
+@media (max-width: 560px) {
+  .color-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.color-swatch {
+  position: relative;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-strong);
+  cursor: pointer;
+  padding: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 2px rgba(0,0,0,0.2);
+  transition: transform 0.1s ease, border-color 0.15s ease;
+}
+.color-swatch:hover { border-color: var(--accent); transform: translateY(-1px); }
+.color-swatch:active { transform: translateY(0); }
+.color-swatch-label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  pointer-events: none;
+}
+.color-swatch:hover .color-swatch-label,
+.color-swatch:focus-visible .color-swatch-label { opacity: 1; }
+
+.format-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.format-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border-strong);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 7px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.format-btn:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); }
+.format-btn-icon { font-family: var(--font-mono); font-weight: 800; }
+.format-btn.is-reset { color: var(--redstone); border-color: var(--redstone-soft); }
+.format-btn.is-reset:hover { background: var(--redstone-soft); border-color: var(--redstone); color: var(--redstone); }
+
+/* =========================================================
+   Line inputs
+   ========================================================= */
+.motd-line-wrap { margin-bottom: 14px; }
+
+.motd-line-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.motd-line-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.motd-char-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+.motd-char-count.is-over { color: var(--redstone); font-weight: 700; }
+
+.motd-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14.5px;
+  font-family: var(--font-mono);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.motd-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--panel);
+}
+
+.motd-textarea {
+  resize: none;
+  line-height: 1.7;
+  min-height: 76px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.motd-editor-actions { display: flex; justify-content: flex-end; margin-top: 4px; }
+
+/* =========================================================
+   Server-list preview
+   ========================================================= */
+.server-row-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #2b2f36, #202329);
+  border: 1px solid #0c0d10;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), var(--shadow-card);
+}
+
+.server-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  background: #15171b;
+  border: 1px solid #050506;
+  border-radius: 4px;
+  color: #7c8492;
+}
+
+.server-row-main { flex: 1; min-width: 0; }
+
+.server-row-motd {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+}
+
+.motd-preview-line {
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #bfbfbf;
+  min-height: 1.55em;
+}
+
+.server-row-side {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.server-ping {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+.ping-bar {
+  width: 3px;
+  background: #55ff55;
+  border-radius: 1px;
+}
+.ping-bar:nth-child(1) { height: 30%; }
+.ping-bar:nth-child(2) { height: 55%; }
+.ping-bar:nth-child(3) { height: 80%; }
+.ping-bar:nth-child(4) { height: 100%; }
+
+.server-players {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: #bfbfbf;
+}
+
+/* Minecraft chat-style formatting used inside the preview */
+.mc-bold { font-weight: 800; }
+.mc-italic { font-style: italic; }
+.mc-underline { text-decoration: underline; }
+.mc-strike { text-decoration: line-through; }
+.mc-underline.mc-strike { text-decoration: underline line-through; }
+.mc-obf { letter-spacing: 0.02em; }
+
+/* =========================================================
+   Output boxes
+   ========================================================= */
+.output-block { margin-bottom: 18px; }
+.output-block:last-child { margin-bottom: 0; }
+
+.output-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.output-block-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.copy-btn.is-copied { background: var(--green-soft); color: var(--green); border-color: var(--green); }
+
+.output-box {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-all;
+  min-height: 1.7em;
+}
+
+.output-note {
+  margin: 8px 2px 0;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}

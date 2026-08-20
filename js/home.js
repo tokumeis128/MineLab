@@ -47,7 +47,7 @@ let currentLang = "ja";
    ========================================================= */
 const FEATURES = [
   { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: true, href: null },
-  { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: false, href: "index.html" },
+  { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: false, href: "craft.html" },
   { id: "motd", icon: "📜", name: "MOTDジェネレーター", tagline: "Server List Message Editor", active: false, href: "motd.html" },
   { id: "pack", icon: "🧩", name: "リソースパック情報ジェネレーター", tagline: "pack.mcmeta / manifest.json Generator", active: false, href: "pack.html" },
   { id: "properties", icon: "🖥", name: "server.propertiesエディター", tagline: "Server Properties Editor", active: false, href: "properties.html" },
@@ -56,7 +56,7 @@ const FEATURES = [
 // Cards shown on the home page itself. Kept separate from FEATURES (the nav
 // menu list) since each card carries a longer descriptive blurb.
 const HOME_CARDS = [
-  { id: "craft", icon: "⛏", titleKey: "card.craft.title", descKey: "card.craft.desc", href: "index.html" },
+  { id: "craft", icon: "⛏", titleKey: "card.craft.title", descKey: "card.craft.desc", href: "craft.html" },
   { id: "motd", icon: "📜", titleKey: "card.motd.title", descKey: "card.motd.desc", href: "motd.html" },
   { id: "pack", icon: "🧩", titleKey: "card.pack.title", descKey: "card.pack.desc", href: "pack.html" },
   { id: "properties", icon: "🖥", titleKey: "card.properties.title", descKey: "card.properties.desc", href: "properties.html" },

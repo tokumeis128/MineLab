@@ -38,6 +38,13 @@ const I18N = {
     "stackUnit": "スタック",
     "plusUnit": "+",
     "brand.tagline": "クラフト計算機",
+    "nav.home": "ホーム",
+    "nav.craft": "クラフト計算機",
+    "nav.motd": "MOTDジェネレーター",
+    "nav.pack": "リソースパック情報ジェネレーター",
+    "nav.properties": "server.propertiesエディター",
+    "nav.emptyHint": "準備中の機能はまだありません。",
+    "search.noResults": "該当するアイテムが見つかりません。",
   },
   en: {
     "eyebrow.select": "STEP 01 — INPUT",
@@ -73,9 +80,101 @@ const I18N = {
     "stackUnit": "stacks",
     "plusUnit": "+",
     "brand.tagline": "Recipe Calculator",
+    "nav.home": "Home",
+    "nav.craft": "Recipe Calculator",
+    "nav.motd": "MOTD Generator",
+    "nav.pack": "Resource Pack Metadata Generator",
+    "nav.properties": "server.properties Editor",
+    "nav.emptyHint": "No features are ready yet.",
+    "search.noResults": "No matching items found.",
+  },
+  "zh-CN": {
+    "eyebrow.select": "STEP 01 — 输入",
+    "heading.select": "想要制作的物品",
+    "search.placeholder": "搜索物品...（例：活塞 / piston / minecraft:piston）",
+    "hint.emptySelect": "从上方搜索栏选择物品后，会添加到这里。",
+    "eyebrow.summary": "STEP 02 — 结果",
+    "heading.summary": "所需材料（最终素材）",
+    "table.item": "材料",
+    "table.count": "所需数量",
+    "table.stack": "换算为组数",
+    "summary.footnote": "没有对应合成表的物品，将被视为需要直接采集或获取的素材。",
+    "eyebrow.detail": "STEP 03 — 明细",
+    "heading.detail": "合成明细",
+    "btn.expandAll": "全部展开",
+    "btn.collapseAll": "全部折叠",
+    "btn.clearAll": "全部删除",
+    "confirm.clearAll": "确定要删除所有已选择的物品吗？",
+    "footer.disclaimer": "本网站为非官方同人制作工具，与 Minecraft 及 Mojang 无关。\n部分内容借助 AI 助手生成。\n© 2026 MineLab. All rights reserved.",
+    "badge.base": "采集",
+    "badge.cycle": "循环错误",
+    "recipe.title": "合成表",
+    "recipe.shapeless": "无序合成（不限定形状）",
+    "recipe.variant": "合成表",
+    "meta.perCraft": "单次合成",
+    "meta.craftCount": "所需合成次数",
+    "meta.produced": "完成数量",
+    "meta.times": "次",
+    "meta.pieces": "个",
+    "required": "所需材料",
+    "cycleMsg": "检测到循环引用，无法继续展开。",
+    "noRecipeMsg": "该物品没有对应的合成表，将被视为需要采集或获取的材料。",
+    "stackUnit": "组",
+    "plusUnit": "+",
+    "brand.tagline": "合成计算器",
+    "nav.home": "首页",
+    "nav.craft": "合成计算器",
+    "nav.motd": "MOTD 生成器",
+    "nav.pack": "资源包信息生成器",
+    "nav.properties": "server.properties 编辑器",
+    "nav.emptyHint": "暂时还没有可用的功能。",
+    "search.noResults": "未找到匹配的物品。",
+  },
+  "zh-TW": {
+    "eyebrow.select": "STEP 01 — 輸入",
+    "heading.select": "想要製作的物品",
+    "search.placeholder": "搜尋物品...（例：活塞 / piston / minecraft:piston）",
+    "hint.emptySelect": "從上方搜尋欄選擇物品後，會新增到這裡。",
+    "eyebrow.summary": "STEP 02 — 結果",
+    "heading.summary": "所需材料（最終素材）",
+    "table.item": "材料",
+    "table.count": "所需數量",
+    "table.stack": "換算為組數",
+    "summary.footnote": "沒有對應合成表的物品，將被視為需要直接採集或獲取的素材。",
+    "eyebrow.detail": "STEP 03 — 明細",
+    "heading.detail": "合成明細",
+    "btn.expandAll": "全部展開",
+    "btn.collapseAll": "全部摺疊",
+    "btn.clearAll": "全部刪除",
+    "confirm.clearAll": "確定要刪除所有已選擇的物品嗎？",
+    "footer.disclaimer": "本網站為非官方同人製作工具，與 Minecraft 及 Mojang 無關。\n部分內容藉助 AI 助手生成。\n© 2026 MineLab. All rights reserved.",
+    "badge.base": "採集",
+    "badge.cycle": "迴圈錯誤",
+    "recipe.title": "合成表",
+    "recipe.shapeless": "無序合成（不限定形狀）",
+    "recipe.variant": "合成表",
+    "meta.perCraft": "單次合成",
+    "meta.craftCount": "所需合成次數",
+    "meta.produced": "完成數量",
+    "meta.times": "次",
+    "meta.pieces": "個",
+    "required": "所需材料",
+    "cycleMsg": "檢測到迴圈引用，無法繼續展開。",
+    "noRecipeMsg": "該物品沒有對應的合成表，將被視為需要採集或獲取的材料。",
+    "stackUnit": "組",
+    "plusUnit": "+",
+    "brand.tagline": "合成計算器",
+    "nav.home": "首頁",
+    "nav.craft": "合成計算器",
+    "nav.motd": "MOTD 生成器",
+    "nav.pack": "資源包資訊生成器",
+    "nav.properties": "server.properties 編輯器",
+    "nav.emptyHint": "暫時還沒有可用的功能。",
+    "search.noResults": "未找到相符的物品。",
   }
 };
 
+const SUPPORTED_LANGS = ["ja", "en", "zh-CN", "zh-TW"];
 let currentLang = "ja";
 
 /* =========================================================
@@ -99,7 +198,7 @@ function iconImgHtml(id, cls) {
   // instead — currently unused, but kept in case a future item needs a
   // one-off asset outside the normal block/item layout.
   const src = item.texture.startsWith("assets/") ? item.texture : TEXTURE_BASE + item.texture;
-  const alt = escapeHtml((currentLang === "ja" ? item.name_ja : item.name_en) || id);
+  const alt = escapeHtml(itemName(id) || id);
   return `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy" onerror="window.__iconFallback(this,'${emoji}')">`;
 }
 
@@ -130,11 +229,11 @@ let recipeChoice = {};         // id -> chosen index, for items with multiple al
 // ships one tool; add more entries here as new features are built, e.g.:
 // { id: "smelting", icon: "\u2668\ufe0f", name: "製錬計算機", tagline: "Smelting Calculator", active: false, href: "smelting.html" }
 const FEATURES = [
-  { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: false, href: "index.html" },
-  { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: true, href: null },
-  { id: "motd", icon: "📜", name: "MOTDジェネレーター", tagline: "Server List Message Editor", active: false, href: "motd.html" },
-  { id: "pack", icon: "🧩", name: "リソースパック情報ジェネレーター", tagline: "pack.mcmeta / manifest.json Generator", active: false, href: "pack.html" },
-  { id: "properties", icon: "🖥", name: "server.propertiesエディター", tagline: "Server Properties Editor", active: false, href: "properties.html" },
+  { id: "home", icon: "🏠", nameKey: "nav.home", tagline: "MineLab Home", active: false, href: "index.html" },
+  { id: "craft", icon: "⛏", nameKey: "nav.craft", tagline: "Recipe Stack Resolver", active: true, href: null },
+  { id: "motd", icon: "📜", nameKey: "nav.motd", tagline: "Server List Message Editor", active: false, href: "motd.html" },
+  { id: "pack", icon: "🧩", nameKey: "nav.pack", tagline: "pack.mcmeta / manifest.json Generator", active: false, href: "pack.html" },
+  { id: "properties", icon: "🖥", nameKey: "nav.properties", tagline: "Server Properties Editor", active: false, href: "properties.html" },
 ];
 
 /* =========================================================
@@ -211,16 +310,17 @@ function safeSetStorage(key, val) {
    ========================================================= */
 function initLang() {
   const saved = safeGetStorage("mc-craft-lang");
-  currentLang = saved === "en" ? "en" : "ja";
+  currentLang = SUPPORTED_LANGS.includes(saved) ? saved : "ja";
   applyLang();
 
   const select = document.getElementById("lang-select");
   select.value = currentLang;
 
   select.addEventListener("change", () => {
-    currentLang = select.value === "en" ? "en" : "ja";
+    currentLang = SUPPORTED_LANGS.includes(select.value) ? select.value : "ja";
     safeSetStorage("mc-craft-lang", currentLang);
     applyLang();
+    renderNavMenu();
     renderSelected();
     recalcAndRender();
   });
@@ -228,6 +328,27 @@ function initLang() {
 
 function t(key) {
   return (I18N[currentLang] && I18N[currentLang][key]) || I18N.ja[key] || key;
+}
+
+// Maps the current UI language to the matching field name(s) on an item
+// record from items.json, in preference order (falls back through the list).
+const ITEM_NAME_FIELD_FALLBACK = {
+  ja: ["name_ja", "name_en"],
+  en: ["name_en", "name_ja"],
+  "zh-CN": ["name_zh_cn", "name_en", "name_ja"],
+  "zh-TW": ["name_zh_tw", "name_en", "name_ja"],
+};
+const ITEM_SUBNAME_FIELD_FALLBACK = {
+  ja: ["name_en"],
+  en: ["name_ja"],
+  "zh-CN": ["name_en"],
+  "zh-TW": ["name_en"],
+};
+function pickItemField(item, fields) {
+  for (const f of fields) {
+    if (item[f]) return item[f];
+  }
+  return "";
 }
 
 function applyLang() {
@@ -250,12 +371,14 @@ function applyLang() {
 function itemName(id) {
   const item = itemsData[id];
   if (!item) return id;
-  return currentLang === "ja" ? item.name_ja : item.name_en;
+  const fields = ITEM_NAME_FIELD_FALLBACK[currentLang] || ITEM_NAME_FIELD_FALLBACK.ja;
+  return pickItemField(item, fields) || id;
 }
 function itemSubName(id) {
   const item = itemsData[id];
   if (!item) return id;
-  return currentLang === "ja" ? item.name_en : item.name_ja;
+  const fields = ITEM_SUBNAME_FIELD_FALLBACK[currentLang] || ITEM_SUBNAME_FIELD_FALLBACK.ja;
+  return pickItemField(item, fields) || "";
 }
 
 /* =========================================================
@@ -269,6 +392,8 @@ function buildSearchIndex() {
     idFull: id.toLowerCase(),
     nameJa: (item.name_ja || "").toLowerCase(),
     nameEn: (item.name_en || "").toLowerCase(),
+    nameZhCn: (item.name_zh_cn || "").toLowerCase(),
+    nameZhTw: (item.name_zh_tw || "").toLowerCase(),
   }));
 }
 
@@ -280,7 +405,9 @@ function searchItems(query) {
       entry.idShort.includes(q) ||
       entry.idFull.includes(q) ||
       entry.nameJa.includes(q) ||
-      entry.nameEn.includes(q)
+      entry.nameEn.includes(q) ||
+      entry.nameZhCn.includes(q) ||
+      entry.nameZhTw.includes(q)
     )
     .slice(0, 30);
 }
@@ -288,7 +415,7 @@ function searchItems(query) {
 function renderNavMenu() {
   const list = document.getElementById("nav-menu-list");
   if (FEATURES.length === 0) {
-    list.innerHTML = `<li class="nav-menu-empty-hint">準備中の機能はまだありません。</li>`;
+    list.innerHTML = `<li class="nav-menu-empty-hint">${escapeHtml(t("nav.emptyHint"))}</li>`;
     return;
   }
 
@@ -297,7 +424,7 @@ function renderNavMenu() {
       <button type="button" class="nav-menu-item${f.active ? " active" : ""}" data-feature-id="${f.id}">
         <span class="nav-menu-icon" aria-hidden="true">${f.icon}</span>
         <span class="nav-menu-text">
-          <span class="nav-menu-name">${escapeHtml(f.name)}</span>
+          ${currentLang !== "en" ? `<span class="nav-menu-name">${escapeHtml(t(f.nameKey))}</span>` : ""}
           <span class="nav-menu-tagline">${escapeHtml(f.tagline)}</span>
         </span>
         ${f.active ? `<span class="nav-menu-check" aria-hidden="true">✓</span>` : ""}
@@ -401,7 +528,7 @@ function renderSearchResults(matches, rawQuery) {
   }
 
   if (matches.length === 0) {
-    results.innerHTML = `<div class="search-no-results">${currentLang === "ja" ? "該当するアイテムが見つかりません。" : "No matching items found."}</div>`;
+    results.innerHTML = `<div class="search-no-results">${escapeHtml(t("search.noResults"))}</div>`;
     results.hidden = false;
     input.setAttribute("aria-expanded", "true");
     return;
@@ -411,8 +538,8 @@ function renderSearchResults(matches, rawQuery) {
     <div class="search-result-item" role="option" data-id="${m.id}" data-index="${i}">
       <span class="result-icon">${iconImgHtml(m.id, "pixel-icon")}</span>
       <span class="result-text">
-        <span class="result-name-en">${escapeHtml(currentLang === "ja" ? m.item.name_ja : m.item.name_en)}</span>
-        <span class="result-name-ja">${escapeHtml(currentLang === "ja" ? m.item.name_en : m.item.name_ja)}</span>
+        <span class="result-name-en">${escapeHtml(itemName(m.id))}</span>
+        <span class="result-name-ja">${escapeHtml(itemSubName(m.id))}</span>
       </span>
       <span class="result-id">${m.id}</span>
     </div>
@@ -826,8 +953,8 @@ function buildRecipeVisual(node) {
   meta.className = "craft-meta";
   meta.innerHTML = `
     <span>${t("meta.perCraft")}: <strong>${itemName(node.id)} × ${recipe.result_count || 1}</strong></span>
-    <span>${t("meta.craftCount")}: <strong>${node.craftCount.toLocaleString()} ${currentLang === "ja" ? "回" : "crafts"}</strong></span>
-    <span>${t("meta.produced")}: <strong>${node.producedCount.toLocaleString()} ${currentLang === "ja" ? "個" : ""}</strong>${producedSuffix ? ` <span class="tree-label-stack">${producedSuffix}</span>` : ""}</span>
+    <span>${t("meta.craftCount")}: <strong>${node.craftCount.toLocaleString()} ${escapeHtml(t("meta.times"))}</strong></span>
+    <span>${t("meta.produced")}: <strong>${node.producedCount.toLocaleString()} ${escapeHtml(t("meta.pieces"))}</strong>${producedSuffix ? ` <span class="tree-label-stack">${producedSuffix}</span>` : ""}</span>
   `;
   flex.appendChild(meta);
 

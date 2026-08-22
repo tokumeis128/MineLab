@@ -6,6 +6,12 @@
 const I18N = {
   ja: {
     "brand.tagline": "リソースパック情報ジェネレーター",
+    "nav.home": "ホーム",
+    "nav.craft": "クラフト計算機",
+    "nav.motd": "MOTDジェネレーター",
+    "nav.pack": "リソースパック情報ジェネレーター",
+    "nav.properties": "server.propertiesエディター",
+    "nav.emptyHint": "準備中の機能はまだありません。",
     "eyebrow.platform": "STEP 01 — プラットフォーム",
     "heading.platform": "対応プラットフォームを選択",
     "hint.platform": "作りたいリソースパックの種類を選んでください。Java版は pack.mcmeta、統合版（Bedrock）は manifest.json を生成します。",
@@ -41,6 +47,12 @@ const I18N = {
   },
   en: {
     "brand.tagline": "Resource Pack Metadata Generator",
+    "nav.home": "Home",
+    "nav.craft": "Recipe Calculator",
+    "nav.motd": "MOTD Generator",
+    "nav.pack": "Resource Pack Metadata Generator",
+    "nav.properties": "server.properties Editor",
+    "nav.emptyHint": "No features are ready yet.",
     "eyebrow.platform": "STEP 01 — PLATFORM",
     "heading.platform": "Choose your platform",
     "hint.platform": "Pick the kind of resource pack you're making. Java Edition generates pack.mcmeta, Bedrock Edition generates manifest.json.",
@@ -73,20 +85,103 @@ const I18N = {
     "note.je.range": "This version is output using the min_format / max_format style. Save the generated text as a file named pack.mcmeta and place it at the root of your resource pack folder (next to the assets folder).",
     "note.be": "Save the generated text as a file named manifest.json and place it at the root of your resource pack folder (next to the textures folder, etc.).",
     "alert.uuidMissing": "Please enter or generate a UUID first.",
+  },
+  "zh-CN": {
+    "brand.tagline": "资源包信息生成器",
+    "nav.home": "首页",
+    "nav.craft": "合成计算器",
+    "nav.motd": "MOTD 生成器",
+    "nav.pack": "资源包信息生成器",
+    "nav.properties": "server.properties 编辑器",
+    "nav.emptyHint": "暂时还没有可用的功能。",
+    "eyebrow.platform": "STEP 01 — 平台",
+    "heading.platform": "选择适配平台",
+    "hint.platform": "请选择要制作的资源包类型。Java 版生成 pack.mcmeta，基岩版（Bedrock）生成 manifest.json。",
+    "platform.je.title": "Java 版",
+    "platform.je.desc": "生成 pack.mcmeta",
+    "platform.be.title": "基岩版（Bedrock）",
+    "platform.be.desc": "生成 manifest.json",
+    "eyebrow.jeInput": "STEP 02 — 输入（Java 版）",
+    "heading.jeInput": "pack.mcmeta 的内容",
+    "label.jeVersion": "适配的 Minecraft 版本",
+    "label.description": "说明文（description）",
+    "placeholder.description": "My Resource Pack",
+    "btn.generate": "生成",
+    "eyebrow.beInput": "STEP 02 — 输入（基岩版）",
+    "heading.beInput": "manifest.json 的内容",
+    "label.packName": "资源包名称（name）",
+    "label.beEngineVersion": "适配的最低游戏版本（min_engine_version）",
+    "label.packVersion": "资源包自身的版本号（与 Minecraft 版本无关，可自由修改）",
+    "label.headerUuid": "头部 UUID（header.uuid）",
+    "label.moduleUuid": "模块 UUID（modules[].uuid）",
+    "btn.generateUuid": "自动生成",
+    "hint.uuid": "这两个 UUID 必须互不相同。发布资源包时，建议直接使用自动生成的值，以避免与其他资源包冲突。",
+    "eyebrow.packOutput": "STEP 03 — 输出",
+    "heading.packOutput": "输出",
+    "btn.copy": "复制",
+    "btn.copied": "已复制",
+    "btn.download": "保存为文件",
+    "footer.disclaimer": "本网站为非官方同人制作工具，与 Minecraft 及 Mojang 无关。\n部分内容借助 AI 助手生成。\n© 2026 MineLab. All rights reserved.",
+    "note.je.old": "请将生成的内容保存为名为 pack.mcmeta 的文本文件，并放置在资源包文件夹的根目录下（与 assets 文件夹同级）。",
+    "note.je.range": "此版本将以 min_format / max_format 格式输出。请将生成的内容保存为名为 pack.mcmeta 的文本文件，并放置在资源包文件夹的根目录下（与 assets 文件夹同级）。",
+    "note.be": "请将生成的内容保存为名为 manifest.json 的文本文件，并放置在资源包文件夹的根目录下（与 textures 文件夹等同级）。",
+    "alert.uuidMissing": "请先输入或自动生成 UUID。",
+  },
+  "zh-TW": {
+    "brand.tagline": "資源包資訊生成器",
+    "nav.home": "首頁",
+    "nav.craft": "合成計算器",
+    "nav.motd": "MOTD 生成器",
+    "nav.pack": "資源包資訊生成器",
+    "nav.properties": "server.properties 編輯器",
+    "nav.emptyHint": "暫時還沒有可用的功能。",
+    "eyebrow.platform": "STEP 01 — 平臺",
+    "heading.platform": "選擇適配平臺",
+    "hint.platform": "請選擇要製作的資源包型別。Java 版生成 pack.mcmeta，基岩版（Bedrock）生成 manifest.json。",
+    "platform.je.title": "Java 版",
+    "platform.je.desc": "生成 pack.mcmeta",
+    "platform.be.title": "基岩版（Bedrock）",
+    "platform.be.desc": "生成 manifest.json",
+    "eyebrow.jeInput": "STEP 02 — 輸入（Java 版）",
+    "heading.jeInput": "pack.mcmeta 的內容",
+    "label.jeVersion": "適配的 Minecraft 版本",
+    "label.description": "說明文（description）",
+    "placeholder.description": "My Resource Pack",
+    "btn.generate": "生成",
+    "eyebrow.beInput": "STEP 02 — 輸入（基岩版）",
+    "heading.beInput": "manifest.json 的內容",
+    "label.packName": "資源包名稱（name）",
+    "label.beEngineVersion": "適配的最低遊戲版本（min_engine_version）",
+    "label.packVersion": "資源包自身的版本號（與 Minecraft 版本無關，可自由修改）",
+    "label.headerUuid": "頭部 UUID（header.uuid）",
+    "label.moduleUuid": "模組 UUID（modules[].uuid）",
+    "btn.generateUuid": "自動生成",
+    "hint.uuid": "這兩個 UUID 必須互不相同。釋出資源包時，建議直接使用自動生成的值，以避免與其他資源包衝突。",
+    "eyebrow.packOutput": "STEP 03 — 輸出",
+    "heading.packOutput": "輸出",
+    "btn.copy": "複製",
+    "btn.copied": "已複製",
+    "btn.download": "儲存為檔案",
+    "footer.disclaimer": "本網站為非官方同人製作工具，與 Minecraft 及 Mojang 無關。\n部分內容藉助 AI 助手生成。\n© 2026 MineLab. All rights reserved.",
+    "note.je.old": "請將生成的內容儲存為名為 pack.mcmeta 的文字檔案，並放置在資源包資料夾的根目錄下（與 assets 資料夾同級）。",
+    "note.je.range": "此版本將以 min_format / max_format 格式輸出。請將生成的內容儲存為名為 pack.mcmeta 的文字檔案，並放置在資源包資料夾的根目錄下（與 assets 資料夾同級）。",
+    "note.be": "請將生成的內容儲存為名為 manifest.json 的文字檔案，並放置在資源包資料夾的根目錄下（與 textures 資料夾等同級）。",
+    "alert.uuidMissing": "請先輸入或自動生成 UUID。",
   }
 };
 
+const SUPPORTED_LANGS = ["ja", "en", "zh-CN", "zh-TW"];
 let currentLang = "ja";
 
 /* =========================================================
    Feature / tool switcher (hamburger menu)
    ========================================================= */
 const FEATURES = [
-  { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: false, href: "index.html" },
-  { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: false, href: "craft.html" },
-  { id: "motd", icon: "📜", name: "MOTDジェネレーター", tagline: "Server List Message Editor", active: false, href: "motd.html" },
-  { id: "pack", icon: "🧩", name: "リソースパック情報ジェネレーター", tagline: "pack.mcmeta / manifest.json Generator", active: true, href: null },
-  { id: "properties", icon: "🖥", name: "server.propertiesエディター", tagline: "Server Properties Editor", active: false, href: "properties.html" },
+  { id: "home", icon: "🏠", nameKey: "nav.home", tagline: "MineLab Home", active: false, href: "index.html" },
+  { id: "craft", icon: "⛏", nameKey: "nav.craft", tagline: "Recipe Stack Resolver", active: false, href: "craft.html" },
+  { id: "motd", icon: "📜", nameKey: "nav.motd", tagline: "Server List Message Editor", active: false, href: "motd.html" },
+  { id: "pack", icon: "🧩", nameKey: "nav.pack", tagline: "pack.mcmeta / manifest.json Generator", active: true, href: null },
+  { id: "properties", icon: "🖥", nameKey: "nav.properties", tagline: "Server Properties Editor", active: false, href: "properties.html" },
 ];
 
 /* =========================================================
@@ -189,16 +284,17 @@ function safeSetStorage(key, val) {
    ========================================================= */
 function initLang() {
   const saved = safeGetStorage("mc-craft-lang");
-  currentLang = saved === "en" ? "en" : "ja";
+  currentLang = SUPPORTED_LANGS.includes(saved) ? saved : "ja";
   applyLang();
 
   const select = document.getElementById("lang-select");
   select.value = currentLang;
 
   select.addEventListener("change", () => {
-    currentLang = select.value === "en" ? "en" : "ja";
+    currentLang = SUPPORTED_LANGS.includes(select.value) ? select.value : "ja";
     safeSetStorage("mc-craft-lang", currentLang);
     applyLang();
+    renderNavMenu();
     populateJeVersions();
     populateBeVersions();
     updateJeVersionHint();
@@ -239,7 +335,7 @@ function renderNavMenu() {
       <button type="button" class="nav-menu-item${f.active ? " active" : ""}" data-feature-id="${f.id}">
         <span class="nav-menu-icon" aria-hidden="true">${f.icon}</span>
         <span class="nav-menu-text">
-          <span class="nav-menu-name">${escapeHtml(f.name)}</span>
+          ${currentLang !== "en" ? `<span class="nav-menu-name">${escapeHtml(t(f.nameKey))}</span>` : ""}
           <span class="nav-menu-tagline">${escapeHtml(f.tagline)}</span>
         </span>
         ${f.active ? `<span class="nav-menu-check" aria-hidden="true">✓</span>` : ""}

@@ -6,6 +6,12 @@
 const I18N = {
   ja: {
     "brand.tagline": "MOTDジェネレーター",
+    "nav.home": "ホーム",
+    "nav.craft": "クラフト計算機",
+    "nav.motd": "MOTDジェネレーター",
+    "nav.pack": "リソースパック情報ジェネレーター",
+    "nav.properties": "server.propertiesエディター",
+    "nav.emptyHint": "準備中の機能はまだありません。",
     "eyebrow.editor": "STEP 01 — 入力",
     "heading.editor": "MOTDを編集",
     "hint.howTo": "下の欄に文章を入力し、色や太字などを付けたい範囲をドラッグして選択してから、ボタンを押すと適用されます。",
@@ -31,9 +37,16 @@ const I18N = {
     "color.red": "赤", "color.lightPurple": "ピンク", "color.yellow": "黄色", "color.white": "白",
     "format.bold": "太字", "format.italic": "斜体", "format.underline": "下線",
     "format.strike": "取り消し線", "format.obf": "ランダム文字", "format.reset": "リセット",
+    "label.line1": "1行目", "label.line2": "2行目",
   },
   en: {
     "brand.tagline": "MOTD Generator",
+    "nav.home": "Home",
+    "nav.craft": "Recipe Calculator",
+    "nav.motd": "MOTD Generator",
+    "nav.pack": "Resource Pack Metadata Generator",
+    "nav.properties": "server.properties Editor",
+    "nav.emptyHint": "No features are ready yet.",
     "eyebrow.editor": "STEP 01 — INPUT",
     "heading.editor": "Edit your MOTD",
     "hint.howTo": "Type your message below, drag to select the part you want to style, then click a button to apply it.",
@@ -59,20 +72,126 @@ const I18N = {
     "color.red": "Red", "color.lightPurple": "Light Purple", "color.yellow": "Yellow", "color.white": "White",
     "format.bold": "Bold", "format.italic": "Italic", "format.underline": "Underline",
     "format.strike": "Strikethrough", "format.obf": "Obfuscated", "format.reset": "Reset",
+    "label.line1": "Line 1", "label.line2": "Line 2",
+  },
+  "zh-CN": {
+    "brand.tagline": "MOTD 生成器",
+    "nav.home": "首页",
+    "nav.craft": "合成计算器",
+    "nav.motd": "MOTD 生成器",
+    "nav.pack": "资源包信息生成器",
+    "nav.properties": "server.properties 编辑器",
+    "nav.emptyHint": "暂时还没有可用的功能。",
+    "eyebrow.editor": "STEP 01 — 输入",
+    "heading.editor": "编辑 MOTD",
+    "hint.howTo": "在下方输入文字，拖动选中想要设置格式的部分，然后点击按钮即可应用。",
+    "toolbar.color": "颜色",
+    "toolbar.format": "格式",
+    "label.motdText": "MOTD（按 Enter 换行 / 最多 2 行）",
+    "btn.clearMotd": "全部清除",
+    "confirm.clearMotd": "确定要清除所有已输入的内容吗？",
+    "eyebrow.preview": "STEP 02 — 预览",
+    "heading.preview": "预览",
+    "hint.previewNote": "这里重现了多人游戏服务器列表中的显示效果。实际显示可能因环境略有差异。",
+    "eyebrow.output": "STEP 03 — 输出",
+    "heading.output": "输出",
+    "output.raw": "§ 代码（用于插件的 /motd 命令等）",
+    "output.properties": "server.properties 用（已进行 Unicode 转义）",
+    "output.propertiesNote": "server.properties 是以 Java 属性文件格式（ASCII）读取的，因此中文、日文及 § 符号等非 ASCII 字符如果直接写入会出现乱码。此栏已自动转换为 \\uXXXX 格式。请将 motd= 所在行替换为这里的内容（\\n 请直接粘贴为两个字符）。",
+    "btn.copy": "复制",
+    "btn.copied": "已复制",
+    "footer.disclaimer": "本网站为非官方同人制作工具，与 Minecraft 及 Mojang 无关。\n部分内容借助 AI 助手生成。\n© 2026 MineLab. All rights reserved.",
+    "color.black": "黑色",
+    "color.darkBlue": "深蓝色",
+    "color.darkGreen": "深绿色",
+    "color.darkAqua": "深青色",
+    "color.darkRed": "深红色",
+    "color.darkPurple": "深紫色",
+    "color.gold": "金色",
+    "color.gray": "灰色",
+    "color.darkGray": "深灰色",
+    "color.blue": "蓝色",
+    "color.green": "绿色",
+    "color.aqua": "青色",
+    "color.red": "红色",
+    "color.lightPurple": "粉色",
+    "color.yellow": "黄色",
+    "color.white": "白色",
+    "format.bold": "粗体",
+    "format.italic": "斜体",
+    "format.underline": "下划线",
+    "format.strike": "删除线",
+    "format.obf": "随机字符",
+    "format.reset": "重置",
+    "label.line1": "第 1 行",
+    "label.line2": "第 2 行",
+  },
+  "zh-TW": {
+    "brand.tagline": "MOTD 生成器",
+    "nav.home": "首頁",
+    "nav.craft": "合成計算器",
+    "nav.motd": "MOTD 生成器",
+    "nav.pack": "資源包資訊生成器",
+    "nav.properties": "server.properties 編輯器",
+    "nav.emptyHint": "暫時還沒有可用的功能。",
+    "eyebrow.editor": "STEP 01 — 輸入",
+    "heading.editor": "編輯 MOTD",
+    "hint.howTo": "在下方輸入文字，拖動選中想要設定格式的部分，然後點選按鈕即可應用。",
+    "toolbar.color": "顏色",
+    "toolbar.format": "格式",
+    "label.motdText": "MOTD（按 Enter 換行 / 最多 2 行）",
+    "btn.clearMotd": "全部清除",
+    "confirm.clearMotd": "確定要清除所有已輸入的內容嗎？",
+    "eyebrow.preview": "STEP 02 — 預覽",
+    "heading.preview": "預覽",
+    "hint.previewNote": "這裡重現了多人遊戲伺服器列表中的顯示效果。實際顯示可能因環境略有差異。",
+    "eyebrow.output": "STEP 03 — 輸出",
+    "heading.output": "輸出",
+    "output.raw": "§ 程式碼（用於外掛的 /motd 命令等）",
+    "output.properties": "server.properties 用（已進行 Unicode 轉義）",
+    "output.propertiesNote": "server.properties 是以 Java 屬性檔案格式（ASCII）讀取的，因此中文、日文及 § 符號等非 ASCII 字元如果直接寫入會出現亂碼。此欄已自動轉換為 \\uXXXX 格式。請將 motd= 所在行替換為這裡的內容（\\n 請直接貼上為兩個字元）。",
+    "btn.copy": "複製",
+    "btn.copied": "已複製",
+    "footer.disclaimer": "本網站為非官方同人製作工具，與 Minecraft 及 Mojang 無關。\n部分內容藉助 AI 助手生成。\n© 2026 MineLab. All rights reserved.",
+    "color.black": "黑色",
+    "color.darkBlue": "深藍色",
+    "color.darkGreen": "深綠色",
+    "color.darkAqua": "深青色",
+    "color.darkRed": "深紅色",
+    "color.darkPurple": "深紫色",
+    "color.gold": "金色",
+    "color.gray": "灰色",
+    "color.darkGray": "深灰色",
+    "color.blue": "藍色",
+    "color.green": "綠色",
+    "color.aqua": "青色",
+    "color.red": "紅色",
+    "color.lightPurple": "粉色",
+    "color.yellow": "黃色",
+    "color.white": "白色",
+    "format.bold": "粗體",
+    "format.italic": "斜體",
+    "format.underline": "下劃線",
+    "format.strike": "刪除線",
+    "format.obf": "隨機字元",
+    "format.reset": "重置",
+    "label.line1": "第 1 行",
+    "label.line2": "第 2 行",
   }
 };
 
+const SUPPORTED_LANGS = ["ja", "en", "zh-CN", "zh-TW"];
 let currentLang = "ja";
 
 /* =========================================================
    Feature / tool switcher (hamburger menu)
    ========================================================= */
 const FEATURES = [
-  { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: false, href: "index.html" },
-  { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: false, href: "craft.html" },
-  { id: "motd", icon: "📜", name: "MOTDジェネレーター", tagline: "Server List Message Editor", active: true, href: null },
-  { id: "pack", icon: "🧩", name: "リソースパック情報ジェネレーター", tagline: "pack.mcmeta / manifest.json Generator", active: false, href: "pack.html" },
-  { id: "properties", icon: "🖥", name: "server.propertiesエディター", tagline: "Server Properties Editor", active: false, href: "properties.html" },
+  { id: "home", icon: "🏠", nameKey: "nav.home", tagline: "MineLab Home", active: false, href: "index.html" },
+  { id: "craft", icon: "⛏", nameKey: "nav.craft", tagline: "Recipe Stack Resolver", active: false, href: "craft.html" },
+  { id: "motd", icon: "📜", nameKey: "nav.motd", tagline: "Server List Message Editor", active: true, href: null },
+  { id: "pack", icon: "🧩", nameKey: "nav.pack", tagline: "pack.mcmeta / manifest.json Generator", active: false, href: "pack.html" },
+  { id: "properties", icon: "🖥", nameKey: "nav.properties", tagline: "Server Properties Editor", active: false, href: "properties.html" },
 ];
 
 /* =========================================================
@@ -167,16 +286,17 @@ function safeSetStorage(key, val) {
    ========================================================= */
 function initLang() {
   const saved = safeGetStorage("mc-craft-lang");
-  currentLang = saved === "en" ? "en" : "ja";
+  currentLang = SUPPORTED_LANGS.includes(saved) ? saved : "ja";
   applyLang();
 
   const select = document.getElementById("lang-select");
   select.value = currentLang;
 
   select.addEventListener("change", () => {
-    currentLang = select.value === "en" ? "en" : "ja";
+    currentLang = SUPPORTED_LANGS.includes(select.value) ? select.value : "ja";
     safeSetStorage("mc-craft-lang", currentLang);
     applyLang();
+    renderNavMenu();
     renderToolbar();
     updateAll();
   });
@@ -210,7 +330,7 @@ function renderNavMenu() {
       <button type="button" class="nav-menu-item${f.active ? " active" : ""}" data-feature-id="${f.id}">
         <span class="nav-menu-icon" aria-hidden="true">${f.icon}</span>
         <span class="nav-menu-text">
-          <span class="nav-menu-name">${escapeHtml(f.name)}</span>
+          ${currentLang !== "en" ? `<span class="nav-menu-name">${escapeHtml(t(f.nameKey))}</span>` : ""}
           <span class="nav-menu-tagline">${escapeHtml(f.tagline)}</span>
         </span>
         ${f.active ? `<span class="nav-menu-check" aria-hidden="true">✓</span>` : ""}
@@ -461,7 +581,7 @@ function updateAll() {
 function updateCount(id, text) {
   const visible = text.replace(/&[0-9a-fk-or]/gi, "").length;
   const el = document.getElementById(id);
-  const lineLabel = id === "count-line1" ? (currentLang === "ja" ? "1行目" : "Line 1") : (currentLang === "ja" ? "2行目" : "Line 2");
+  const lineLabel = id === "count-line1" ? t("label.line1") : t("label.line2");
   el.textContent = `${lineLabel}: ${visible} / ${MAX_VISIBLE_CHARS}`;
   el.classList.toggle("is-over", visible > MAX_VISIBLE_CHARS);
 }

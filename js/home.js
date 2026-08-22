@@ -6,6 +6,12 @@
 const I18N = {
   ja: {
     "brand.tagline": "ホーム",
+    "nav.home": "ホーム",
+    "nav.craft": "クラフト計算機",
+    "nav.motd": "MOTDジェネレーター",
+    "nav.pack": "リソースパック情報ジェネレーター",
+    "nav.properties": "server.propertiesエディター",
+    "nav.emptyHint": "準備中の機能はまだありません。",
     "hero.eyebrow": "FAN-MADE TOOLKIT",
     "hero.title": "MineLabへようこそ",
     "hero.body": "Minecraftを遊ぶ・作る人のための、ちょっと便利なツールを集めたサイトです。素材の計算や、サーバー説明文（MOTD）の作成、リソースパックのメタデータ生成などを、ブラウザだけで手軽に行えます。下から使いたい機能を選んでください。",
@@ -23,6 +29,12 @@ const I18N = {
   },
   en: {
     "brand.tagline": "Home",
+    "nav.home": "Home",
+    "nav.craft": "Recipe Calculator",
+    "nav.motd": "MOTD Generator",
+    "nav.pack": "Resource Pack Metadata Generator",
+    "nav.properties": "server.properties Editor",
+    "nav.emptyHint": "No features are ready yet.",
     "hero.eyebrow": "FAN-MADE TOOLKIT",
     "hero.title": "Welcome to MineLab",
     "hero.body": "A small collection of handy tools for Minecraft players and creators. Calculate crafting materials, build a server MOTD, or generate resource pack metadata — all right in your browser. Pick a tool below to get started.",
@@ -37,20 +49,67 @@ const I18N = {
     "card.properties.desc": "Build a Java or Bedrock server.properties file with simple form fields — toggles, dropdowns, and a random port generator included.",
     "card.cta": "Open",
     "footer.disclaimer": "This is an unofficial fan-made tool. Not affiliated with Minecraft or Mojang.\nSome content on this site was generated with the help of an AI assistant.\n© 2026 MineLab. All rights reserved.",
+  },
+  "zh-CN": {
+    "brand.tagline": "首页",
+    "nav.home": "首页",
+    "nav.craft": "合成计算器",
+    "nav.motd": "MOTD 生成器",
+    "nav.pack": "资源包信息生成器",
+    "nav.properties": "server.properties 编辑器",
+    "nav.emptyHint": "暂时还没有可用的功能。",
+    "hero.eyebrow": "同人工具集",
+    "hero.title": "欢迎来到 MineLab",
+    "hero.body": "这是一个为 Minecraft 玩家和创作者准备的实用小工具合集。素材计算、服务器说明文（MOTD）制作、资源包元数据生成等功能，全部可以直接在浏览器里完成。请从下方选择想使用的功能。",
+    "hero.featuresHeading": "功能一览",
+    "card.craft.title": "合成计算器",
+    "card.craft.desc": "只需指定想制作的物品和数量，就能自动计算出最终所需的素材和合成步骤。",
+    "card.motd.title": "MOTD 生成器",
+    "card.motd.desc": "为服务器列表中显示的 MOTD（说明文）添加颜色、加粗等格式，并可实时预览效果。",
+    "card.pack.title": "资源包信息生成器",
+    "card.pack.desc": "只需选择适配版本和说明文，即可生成 Java 版的 pack.mcmeta 或基岩版的 manifest.json。",
+    "card.properties.title": "server.properties 编辑器",
+    "card.properties.desc": "只需在表单中选择难度、游戏模式等选项，即可生成 Java 版、基岩版的服务器配置文件。还支持端口号随机生成。",
+    "card.cta": "打开",
+    "footer.disclaimer": "本网站为非官方同人制作工具，与 Minecraft 及 Mojang 无关。\n部分内容借助 AI 助手生成。\n© 2026 MineLab. All rights reserved.",
+  },
+  "zh-TW": {
+    "brand.tagline": "首頁",
+    "nav.home": "首頁",
+    "nav.craft": "合成計算器",
+    "nav.motd": "MOTD 生成器",
+    "nav.pack": "資源包資訊生成器",
+    "nav.properties": "server.properties 編輯器",
+    "nav.emptyHint": "暫時還沒有可用的功能。",
+    "hero.eyebrow": "同人工具集",
+    "hero.title": "歡迎來到 MineLab",
+    "hero.body": "這是一個為 Minecraft 玩家和創作者準備的實用小工具合集。素材計算、伺服器說明文（MOTD）製作、資源包後設資料生成等功能，全部可以直接在瀏覽器裡完成。請從下方選擇想使用的功能。",
+    "hero.featuresHeading": "功能一覽",
+    "card.craft.title": "合成計算器",
+    "card.craft.desc": "只需指定想製作的物品和數量，就能自動計算出最終所需的素材和合成步驟。",
+    "card.motd.title": "MOTD 生成器",
+    "card.motd.desc": "為伺服器列表中顯示的 MOTD（說明文）新增顏色、加粗等格式，並可實時預覽效果。",
+    "card.pack.title": "資源包資訊生成器",
+    "card.pack.desc": "只需選擇適配版本和說明文，即可生成 Java 版的 pack.mcmeta 或基岩版的 manifest.json。",
+    "card.properties.title": "server.properties 編輯器",
+    "card.properties.desc": "只需在表單中選擇難度、遊戲模式等選項，即可生成 Java 版、基岩版的伺服器配置檔案。還支援埠號隨機生成。",
+    "card.cta": "開啟",
+    "footer.disclaimer": "本網站為非官方同人製作工具，與 Minecraft 及 Mojang 無關。\n部分內容藉助 AI 助手生成。\n© 2026 MineLab. All rights reserved.",
   }
 };
 
+const SUPPORTED_LANGS = ["ja", "en", "zh-CN", "zh-TW"];
 let currentLang = "ja";
 
 /* =========================================================
    Feature / tool switcher (hamburger menu)
    ========================================================= */
 const FEATURES = [
-  { id: "home", icon: "🏠", name: "ホーム", tagline: "MineLab Home", active: true, href: null },
-  { id: "craft", icon: "⛏", name: "クラフト計算機", tagline: "Recipe Stack Resolver", active: false, href: "craft.html" },
-  { id: "motd", icon: "📜", name: "MOTDジェネレーター", tagline: "Server List Message Editor", active: false, href: "motd.html" },
-  { id: "pack", icon: "🧩", name: "リソースパック情報ジェネレーター", tagline: "pack.mcmeta / manifest.json Generator", active: false, href: "pack.html" },
-  { id: "properties", icon: "🖥", name: "server.propertiesエディター", tagline: "Server Properties Editor", active: false, href: "properties.html" },
+  { id: "home", icon: "🏠", nameKey: "nav.home", tagline: "MineLab Home", active: true, href: null },
+  { id: "craft", icon: "⛏", nameKey: "nav.craft", tagline: "Recipe Stack Resolver", active: false, href: "craft.html" },
+  { id: "motd", icon: "📜", nameKey: "nav.motd", tagline: "Server List Message Editor", active: false, href: "motd.html" },
+  { id: "pack", icon: "🧩", nameKey: "nav.pack", tagline: "pack.mcmeta / manifest.json Generator", active: false, href: "pack.html" },
+  { id: "properties", icon: "🖥", nameKey: "nav.properties", tagline: "Server Properties Editor", active: false, href: "properties.html" },
 ];
 
 // Cards shown on the home page itself. Kept separate from FEATURES (the nav
@@ -112,16 +171,17 @@ function safeSetStorage(key, val) {
    ========================================================= */
 function initLang() {
   const saved = safeGetStorage("mc-craft-lang");
-  currentLang = saved === "en" ? "en" : "ja";
+  currentLang = SUPPORTED_LANGS.includes(saved) ? saved : "ja";
   applyLang();
 
   const select = document.getElementById("lang-select");
   select.value = currentLang;
 
   select.addEventListener("change", () => {
-    currentLang = select.value === "en" ? "en" : "ja";
+    currentLang = SUPPORTED_LANGS.includes(select.value) ? select.value : "ja";
     safeSetStorage("mc-craft-lang", currentLang);
     applyLang();
+    renderNavMenu();
     renderFeatureGrid();
   });
 }
@@ -154,7 +214,7 @@ function renderNavMenu() {
       <button type="button" class="nav-menu-item${f.active ? " active" : ""}" data-feature-id="${f.id}">
         <span class="nav-menu-icon" aria-hidden="true">${f.icon}</span>
         <span class="nav-menu-text">
-          <span class="nav-menu-name">${escapeHtml(f.name)}</span>
+          ${currentLang !== "en" ? `<span class="nav-menu-name">${escapeHtml(t(f.nameKey))}</span>` : ""}
           <span class="nav-menu-tagline">${escapeHtml(f.tagline)}</span>
         </span>
         ${f.active ? `<span class="nav-menu-check" aria-hidden="true">✓</span>` : ""}

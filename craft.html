@@ -103,6 +103,47 @@
     <p id="empty-select-hint" class="empty-hint" data-i18n="hint.emptySelect">
       上の検索欄からアイテムを選ぶと、ここに追加されます。
     </p>
+
+    <div class="import-bar">
+      <button type="button" id="import-btn" class="ghost-btn" data-i18n="btn.importList">📥 資材リストを読み込む</button>
+      <span class="import-drop-hint" data-i18n="import.dropHint">ここにファイルをドラッグ＆ドロップすることもできます</span>
+      <input type="file" id="import-file-input" accept=".csv,.txt,text/csv,text/plain" hidden>
+    </div>
+
+    <div id="import-preview" class="import-preview" hidden>
+      <div class="import-preview-head">
+        <h3 data-i18n="import.previewTitle">読み込み内容の確認</h3>
+        <button type="button" id="import-cancel" class="ghost-btn ghost-btn-danger" data-i18n="btn.cancel">キャンセル</button>
+      </div>
+      <p id="import-preview-meta" class="import-preview-meta"></p>
+
+      <div class="import-qty-toggle" role="radiogroup" aria-label="Quantity basis">
+        <span class="import-qty-toggle-label" data-i18n="import.basisLabel">数量の基準</span>
+        <label class="import-radio-label">
+          <input type="radio" name="import-qty-basis" value="missing" checked>
+          <span data-i18n="import.basisMissing">不足分 (Missing)</span>
+        </label>
+        <label class="import-radio-label">
+          <input type="radio" name="import-qty-basis" value="total">
+          <span data-i18n="import.basisTotal">合計 (Total)</span>
+        </label>
+      </div>
+
+      <div class="import-item-list-head">
+        <span id="import-matched-count" class="import-matched-count"></span>
+        <span class="import-select-actions">
+          <button type="button" id="import-select-all" class="ghost-btn" data-i18n="import.selectAll">全て選択</button>
+          <button type="button" id="import-select-none" class="ghost-btn" data-i18n="import.selectNone">全て解除</button>
+        </span>
+      </div>
+      <ul id="import-item-list" class="import-item-list"></ul>
+
+      <div id="import-unmatched" class="import-unmatched" hidden></div>
+
+      <div class="import-preview-actions">
+        <button type="button" id="import-confirm" class="primary-btn" data-i18n="btn.importConfirm">選択したアイテムを追加</button>
+      </div>
+    </div>
   </section>
 
   <!-- STEP 02 : RESULT SUMMARY -->

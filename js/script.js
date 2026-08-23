@@ -45,6 +45,25 @@ const I18N = {
     "nav.properties": "server.propertiesエディター",
     "nav.emptyHint": "準備中の機能はまだありません。",
     "search.noResults": "該当するアイテムが見つかりません。",
+    "btn.importList": "📥 資材リストを読み込む",
+    "import.dropHint": "ここにファイルをドラッグ＆ドロップすることもできます",
+    "import.previewTitle": "読み込み内容の確認",
+    "btn.cancel": "キャンセル",
+    "import.formatCsv": "CSV形式",
+    "import.formatAscii": "ASCII表形式",
+    "import.placementLabel": "配置名",
+    "import.basisLabel": "数量の基準",
+    "import.basisMissing": "不足分 (Missing)",
+    "import.basisTotal": "合計 (Total)",
+    "import.selectAll": "全て選択",
+    "import.selectNone": "全て解除",
+    "import.matchedCount": "件のアイテムが一致しました",
+    "import.unmatchedTitle": "一致するアイテムが見つかりませんでした",
+    "import.zeroQtyHint": "数量が0のため対象外",
+    "btn.importConfirm": "選択したアイテムを追加",
+    "import.noRows": "読み取れる行が見つかりませんでした。ファイル形式をご確認ください。",
+    "import.parseError": "ファイルの読み込みに失敗しました。Litematicaで出力したCSVまたはASCII形式のテキストファイルか確認してください。",
+    "import.readError": "ファイルを読み込めませんでした。",
   },
   en: {
     "eyebrow.select": "STEP 01 — INPUT",
@@ -87,6 +106,25 @@ const I18N = {
     "nav.properties": "server.properties Editor",
     "nav.emptyHint": "No features are ready yet.",
     "search.noResults": "No matching items found.",
+    "btn.importList": "📥 Import material list",
+    "import.dropHint": "You can also drag and drop a file here",
+    "import.previewTitle": "Review imported items",
+    "btn.cancel": "Cancel",
+    "import.formatCsv": "CSV format",
+    "import.formatAscii": "ASCII table format",
+    "import.placementLabel": "Placement name",
+    "import.basisLabel": "Quantity basis",
+    "import.basisMissing": "Missing",
+    "import.basisTotal": "Total",
+    "import.selectAll": "Select all",
+    "import.selectNone": "Select none",
+    "import.matchedCount": " item(s) matched",
+    "import.unmatchedTitle": "Could not match these items",
+    "import.zeroQtyHint": "excluded (quantity is 0)",
+    "btn.importConfirm": "Add selected items",
+    "import.noRows": "No readable rows found. Please check the file format.",
+    "import.parseError": "Failed to read this file. Please make sure it's a CSV or ASCII text material list exported from Litematica.",
+    "import.readError": "Could not read the file.",
   },
   "zh-CN": {
     "eyebrow.select": "STEP 01 — 输入",
@@ -129,6 +167,25 @@ const I18N = {
     "nav.properties": "server.properties 编辑器",
     "nav.emptyHint": "暂时还没有可用的功能。",
     "search.noResults": "未找到匹配的物品。",
+    "btn.importList": "📥 导入材料清单",
+    "import.dropHint": "也可以将文件拖放到此处",
+    "import.previewTitle": "确认导入内容",
+    "btn.cancel": "取消",
+    "import.formatCsv": "CSV 格式",
+    "import.formatAscii": "ASCII 表格格式",
+    "import.placementLabel": "放置名称",
+    "import.basisLabel": "数量基准",
+    "import.basisMissing": "缺少数量 (Missing)",
+    "import.basisTotal": "总数量 (Total)",
+    "import.selectAll": "全选",
+    "import.selectNone": "全不选",
+    "import.matchedCount": " 个物品匹配成功",
+    "import.unmatchedTitle": "未找到匹配的物品",
+    "import.zeroQtyHint": "数量为0，已排除",
+    "btn.importConfirm": "添加所选物品",
+    "import.noRows": "未找到可读取的行，请检查文件格式。",
+    "import.parseError": "读取文件失败，请确认是否为 Litematica 导出的 CSV 或 ASCII 文本材料清单。",
+    "import.readError": "无法读取该文件。",
   },
   "zh-TW": {
     "eyebrow.select": "STEP 01 — 輸入",
@@ -171,6 +228,25 @@ const I18N = {
     "nav.properties": "server.properties 編輯器",
     "nav.emptyHint": "暫時還沒有可用的功能。",
     "search.noResults": "未找到相符的物品。",
+    "btn.importList": "📥 匯入材料清單",
+    "import.dropHint": "也可以將檔案拖放到這裡",
+    "import.previewTitle": "確認匯入內容",
+    "btn.cancel": "取消",
+    "import.formatCsv": "CSV 格式",
+    "import.formatAscii": "ASCII 表格格式",
+    "import.placementLabel": "放置名稱",
+    "import.basisLabel": "數量基準",
+    "import.basisMissing": "缺少數量 (Missing)",
+    "import.basisTotal": "總數量 (Total)",
+    "import.selectAll": "全選",
+    "import.selectNone": "全不選",
+    "import.matchedCount": " 個物品符合",
+    "import.unmatchedTitle": "找不到相符的物品",
+    "import.zeroQtyHint": "數量為0，已排除",
+    "btn.importConfirm": "新增所選物品",
+    "import.noRows": "找不到可讀取的資料列，請確認檔案格式。",
+    "import.parseError": "讀取檔案失敗，請確認是否為 Litematica 匯出的 CSV 或 ASCII 文字材料清單。",
+    "import.readError": "無法讀取該檔案。",
   }
 };
 
@@ -221,6 +297,8 @@ let totals = {};               // id -> count (base materials only)
 let activeResultIndex = -1;
 let currentResults = [];
 let recipeChoice = {};         // id -> chosen index, for items with multiple alternative recipes
+let nameIndex = new Map();     // normalized item name (any language) -> item id, for material-list import
+let importState = null;        // current parsed import preview state (see parseAndPreviewImport)
 
 /* =========================================================
    Feature / tool switcher (hamburger menu)
@@ -246,6 +324,7 @@ async function init() {
   initLang();
   bindStaticEvents();
   renderNavMenu();
+  initImportUi();
 
   try {
     const base = getBasePath();
@@ -395,6 +474,324 @@ function buildSearchIndex() {
     nameZhCn: (item.name_zh_cn || "").toLowerCase(),
     nameZhTw: (item.name_zh_tw || "").toLowerCase(),
   }));
+  buildNameIndex();
+}
+
+/* =========================================================
+   Material-list import (Litematica CSV / ASCII table)
+   ========================================================= */
+// Normalizes a display name for matching: lowercase, trim, collapse
+// whitespace. Used for exact lookups first.
+function normalizeName(str) {
+  return String(str || "").toLowerCase().trim().replace(/\s+/g, " ");
+}
+
+// A looser normalization (letters/digits/CJK only) used as a fallback when
+// the exact-normalized lookup misses, to tolerate punctuation/apostrophe
+// differences between Litematica's export and our own name data.
+function normalizeNameLoose(str) {
+  return normalizeName(str).replace(/[^a-z0-9\u3040-\u30ff\u30a0-\u30ff\u3400-\u9fff]+/g, "");
+}
+
+// Builds a name -> item id lookup covering every language's display name
+// plus the bare (namespace-stripped) item id with underscores turned into
+// spaces (e.g. "grass_block" -> "grass block"), so an imported material
+// list can be matched regardless of which language the exporting client
+// was set to.
+function buildNameIndex() {
+  nameIndex = new Map();
+  const looseIndex = new Map();
+  for (const [id, item] of Object.entries(itemsData)) {
+    const candidates = [
+      item.name_ja, item.name_en, item.name_zh_cn, item.name_zh_tw,
+      id.replace(/^minecraft:/, "").replace(/_/g, " "),
+    ];
+    for (const name of candidates) {
+      if (!name) continue;
+      const key = normalizeName(name);
+      if (key && !nameIndex.has(key)) nameIndex.set(key, id);
+      const looseKey = normalizeNameLoose(name);
+      if (looseKey && !looseIndex.has(looseKey)) looseIndex.set(looseKey, id);
+    }
+  }
+  nameIndex.__loose = looseIndex;
+}
+
+function matchItemByName(rawName) {
+  const exact = nameIndex.get(normalizeName(rawName));
+  if (exact) return exact;
+  const loose = nameIndex.__loose && nameIndex.__loose.get(normalizeNameLoose(rawName));
+  return loose || null;
+}
+
+// --- Parsing -------------------------------------------------------------
+
+// Splits one CSV line into fields, honoring double-quoted fields that may
+// contain commas (Litematica quotes every field, e.g. "Grass Block",143).
+function splitCsvLine(line) {
+  const fields = [];
+  let cur = "";
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') { cur += '"'; i++; } else { inQuotes = false; }
+      } else {
+        cur += ch;
+      }
+    } else if (ch === '"') {
+      inQuotes = true;
+    } else if (ch === ",") {
+      fields.push(cur);
+      cur = "";
+    } else {
+      cur += ch;
+    }
+  }
+  fields.push(cur);
+  return fields.map(f => f.trim());
+}
+
+function parseMaterialListCsv(text) {
+  const lines = text.split(/\r\n|\r|\n/).filter(l => l.trim() !== "");
+  if (lines.length === 0) return { placementName: null, rows: [] };
+
+  const header = splitCsvLine(lines[0]).map(h => h.toLowerCase());
+  let colItem = header.indexOf("item");
+  let colTotal = header.indexOf("total");
+  let colMissing = header.indexOf("missing");
+  let colAvailable = header.indexOf("available");
+  // Fall back to Litematica's fixed column order if headers aren't recognised.
+  if (colItem === -1) { colItem = 0; colTotal = 1; colMissing = 2; colAvailable = 3; }
+
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    const fields = splitCsvLine(lines[i]);
+    const name = fields[colItem];
+    if (!name) continue;
+    rows.push({
+      name,
+      total: parseInt(fields[colTotal], 10) || 0,
+      missing: colMissing >= 0 ? (parseInt(fields[colMissing], 10) || 0) : (parseInt(fields[colTotal], 10) || 0),
+      available: colAvailable >= 0 ? (parseInt(fields[colAvailable], 10) || 0) : 0,
+    });
+  }
+  return { placementName: null, rows };
+}
+
+function parseMaterialListAscii(text) {
+  const lines = text.split(/\r\n|\r|\n/);
+  let placementName = null;
+  const rows = [];
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line.startsWith("|")) continue; // skip "+---+" dividers and blank lines
+
+    // strip leading/trailing "|" then split on "|"
+    const cells = line.replace(/^\|/, "").replace(/\|$/, "").split("|").map(c => c.trim());
+
+    if (cells.length === 1) {
+      const m = cells[0].match(/Material List for placement '(.*)'/i);
+      if (m) placementName = m[1];
+      continue;
+    }
+
+    if (cells.length !== 4) continue; // not a 4-column data/header row we understand
+
+    const normalized = cells.map(c => c.toLowerCase());
+    if (normalized[0] === "item" && normalized[1] === "total") continue; // repeated header row
+
+    const [name, totalStr, missingStr, availableStr] = cells;
+    if (!name) continue;
+    const total = parseInt(totalStr, 10);
+    if (Number.isNaN(total)) continue; // malformed row, skip rather than crash
+
+    rows.push({
+      name,
+      total,
+      missing: parseInt(missingStr, 10) || 0,
+      available: parseInt(availableStr, 10) || 0,
+    });
+  }
+
+  return { placementName, rows };
+}
+
+function detectMaterialListFormat(text) {
+  const trimmed = text.trim();
+  if (trimmed.startsWith("+") || trimmed.startsWith("|")) return "ascii";
+  return "csv";
+}
+
+function parseMaterialListText(text) {
+  const format = detectMaterialListFormat(text);
+  const parsed = format === "ascii" ? parseMaterialListAscii(text) : parseMaterialListCsv(text);
+  return { format, placementName: parsed.placementName, rows: parsed.rows };
+}
+
+// --- UI: import button, file reading, preview panel -----------------------
+
+function initImportUi() {
+  const btn = document.getElementById("import-btn");
+  const fileInput = document.getElementById("import-file-input");
+  if (!btn || !fileInput) return; // page doesn't have the import UI
+
+  btn.addEventListener("click", () => fileInput.click());
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files && fileInput.files[0];
+    if (file) readImportFile(file);
+    fileInput.value = ""; // allow re-selecting the same file later
+  });
+
+  const dropZone = document.getElementById("panel-select");
+  if (dropZone) {
+    ["dragover", "dragenter"].forEach(evt => dropZone.addEventListener(evt, (e) => {
+      e.preventDefault();
+      dropZone.classList.add("drag-active");
+    }));
+    ["dragleave", "dragend"].forEach(evt => dropZone.addEventListener(evt, () => {
+      dropZone.classList.remove("drag-active");
+    }));
+    dropZone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      dropZone.classList.remove("drag-active");
+      const file = e.dataTransfer.files && e.dataTransfer.files[0];
+      if (file) readImportFile(file);
+    });
+  }
+
+  document.getElementById("import-cancel").addEventListener("click", closeImportPreview);
+  document.getElementById("import-confirm").addEventListener("click", confirmImport);
+  document.getElementById("import-select-all").addEventListener("click", () => setAllImportRows(true));
+  document.getElementById("import-select-none").addEventListener("click", () => setAllImportRows(false));
+  document.querySelectorAll('input[name="import-qty-basis"]').forEach(radio => {
+    radio.addEventListener("change", () => {
+      if (importState) { importState.basis = radio.value; renderImportPreview(); }
+    });
+  });
+}
+
+function readImportFile(file) {
+  const reader = new FileReader();
+  reader.onload = () => handleImportedText(String(reader.result || ""));
+  reader.onerror = () => window.alert(t("import.readError"));
+  reader.readAsText(file);
+}
+
+function handleImportedText(text) {
+  let parsed;
+  try {
+    parsed = parseMaterialListText(text);
+  } catch (err) {
+    console.error(err);
+    window.alert(t("import.parseError"));
+    return;
+  }
+  if (!parsed.rows || parsed.rows.length === 0) {
+    window.alert(t("import.noRows"));
+    return;
+  }
+
+  const matched = [];
+  const unmatched = [];
+  for (const row of parsed.rows) {
+    const id = matchItemByName(row.name);
+    if (id && id !== "minecraft:air") {
+      matched.push({ ...row, id, checked: true });
+    } else {
+      unmatched.push(row);
+    }
+  }
+
+  importState = {
+    format: parsed.format,
+    placementName: parsed.placementName,
+    basis: "missing",
+    matched,
+    unmatched,
+  };
+  renderImportPreview();
+  document.getElementById("import-preview").hidden = false;
+}
+
+function importRowQty(row) {
+  return row[importState.basis] || 0;
+}
+
+function setAllImportRows(checked) {
+  if (!importState) return;
+  importState.matched.forEach(row => {
+    if (importRowQty(row) > 0) row.checked = checked;
+  });
+  renderImportPreview();
+}
+
+function renderImportPreview() {
+  if (!importState) return;
+
+  const meta = document.getElementById("import-preview-meta");
+  const formatLabel = t(importState.format === "ascii" ? "import.formatAscii" : "import.formatCsv");
+  const metaParts = [formatLabel];
+  if (importState.placementName) metaParts.push(`${t("import.placementLabel")}: ${escapeHtml(importState.placementName)}`);
+  meta.textContent = metaParts.filter(Boolean).join(" ・ ");
+
+  document.querySelectorAll('input[name="import-qty-basis"]').forEach(radio => {
+    radio.checked = radio.value === importState.basis;
+  });
+
+  const list = document.getElementById("import-item-list");
+  list.innerHTML = importState.matched.map((row, i) => {
+    const qty = importRowQty(row);
+    const disabled = qty <= 0;
+    return `
+      <li class="import-item-row${disabled ? " is-disabled" : ""}">
+        <input type="checkbox" class="import-item-checkbox" data-index="${i}" ${row.checked && !disabled ? "checked" : ""} ${disabled ? "disabled" : ""}>
+        <span class="result-icon">${iconImgHtml(row.id, "pixel-icon")}</span>
+        <span class="selected-name">
+          <span class="selected-name-main">${escapeHtml(itemName(row.id))}</span>
+          <span class="selected-name-sub">${escapeHtml(row.name)}</span>
+        </span>
+        <span class="import-item-qty">${disabled ? t("import.zeroQtyHint") : `× ${qty.toLocaleString()}`}</span>
+      </li>
+    `;
+  }).join("");
+
+  list.querySelectorAll(".import-item-checkbox").forEach(cb => {
+    cb.addEventListener("change", () => {
+      importState.matched[Number(cb.dataset.index)].checked = cb.checked;
+    });
+  });
+
+  const matchedCountEl = document.getElementById("import-matched-count");
+  matchedCountEl.textContent = `${importState.matched.length}${t("import.matchedCount")}`;
+
+  const unmatchedWrap = document.getElementById("import-unmatched");
+  if (importState.unmatched.length > 0) {
+    unmatchedWrap.hidden = false;
+    unmatchedWrap.innerHTML = `
+      <div class="import-unmatched-title">${escapeHtml(t("import.unmatchedTitle"))} (${importState.unmatched.length})</div>
+      <div class="import-unmatched-list">${importState.unmatched.map(r => escapeHtml(r.name)).join(", ")}</div>
+    `;
+  } else {
+    unmatchedWrap.hidden = true;
+    unmatchedWrap.innerHTML = "";
+  }
+}
+
+function confirmImport() {
+  if (!importState) return;
+  importState.matched.forEach(row => {
+    const qty = importRowQty(row);
+    if (row.checked && qty > 0) addItem(row.id, qty);
+  });
+  closeImportPreview();
+}
+
+function closeImportPreview() {
+  importState = null;
+  document.getElementById("import-preview").hidden = true;
 }
 
 function searchItems(query) {
